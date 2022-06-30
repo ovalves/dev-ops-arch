@@ -6,4 +6,4 @@ docker build -t api-tools-test .
 docker run -p 8000:80 -v $(pwd):/var/www api-tools-test
 ```
 
-> http://localhost:8000
+> Acesse: http://localhost:8000
