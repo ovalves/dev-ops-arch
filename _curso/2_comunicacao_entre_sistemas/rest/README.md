@@ -1,5 +1,12 @@
 ## Ambiente para executar o Laminas API Tools
 
+
+## HATEOS
+TODO
+
+## Method e Content Negotiation
+TODO
+
 ```bash
 git clone https://github.com/codeedu/api-tools-skeleton.git api-tools-test
 docker build -t api-tools-test .
