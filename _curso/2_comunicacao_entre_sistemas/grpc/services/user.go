@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ovalves/fullcycle/pb"
+	"github.com/ovalves/sample-grpc/pb"
 )
 
 // type UserServiceServer interface {
@@ -17,7 +17,6 @@ type UserService struct {
 }
 
 func (*UserService) AddUser(ctx context.Context, req *pb.User) (*pb.User, error) {
-
 	// Insert - Database
 	fmt.Println(req.Name)
 
