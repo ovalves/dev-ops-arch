@@ -57,3 +57,9 @@ docker-compose exec app sh
 ```
 protoc --proto_path=proto/ proto/*.proto --plugin=$(go env GOPATH)/bin/protoc-gen-go-grpc --go-grpc_out=. --go_out=.
 ```
+
+## Rodando o servidor gRPC
+```
+cd cmd/server/
+go run server.go
+```
