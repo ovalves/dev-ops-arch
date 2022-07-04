@@ -35,4 +35,25 @@ TODO
 TODO
 
 ## Context Mapping
-TODO
+![](../_assets/ddd-context-mapping-1.png "DDD Context Map")
+
+- ACL: Anticorruption-layer;
+- Integração Conformista: Quando há um grande acoplamente entre a sua plataforma e uma plataforma de terceiros;
+- Shared Kernel: Compartilhamento de recursos utilizados por diversos contextos;
+- D: Downstream (Utiliza o serviço)
+- U: Upstream (Fornece o serviço)
+
+## Padrões de Context Mapping
+- Partnership
+- Shared Kernel
+- Customer-Supplier Development
+- Conformist
+- Anticorruption-layer
+- Open host service
+- Published language
+- Separate ways
+- Big Ball of Mud
+
+### Context Map cheat sheet
+> [context-map-cheat-sheet](https://github.com/ddd-crew/context-mapping)
+![](../_assets/context-map-cheat-sheet.png "context map cheat sheet")
