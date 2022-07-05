@@ -14,3 +14,6 @@ Precisamos ser capazes de modelarmos de forma mais assertiva os seus principais 
 
 ### Entidade anêmica
 TODO
+
+### Entidades e Domínio rico
+TODO
