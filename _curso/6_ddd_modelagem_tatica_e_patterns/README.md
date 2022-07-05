@@ -13,3 +13,4 @@ Precisamos ser capazes de modelarmos de forma mais assertiva os seus principais 
 > Evans, Eric. Domain-Driven Design
 
 ### Entidade anêmica
+TODO
