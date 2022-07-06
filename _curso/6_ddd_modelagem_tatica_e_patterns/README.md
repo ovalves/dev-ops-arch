@@ -17,3 +17,23 @@ TODO
 
 ### Entidades e Domínio rico
 TODO
+
+### Consistência
+TODO
+
+### Princípio da Autovalidação
+Todas as entidades do sistema precisam se autovaliar, para garantir que nenhum de seus atributos recebam dados incorretos vindos de outras partes do sistema.
+
+### Entidade vs ORM
+TODO
+
+## Value Objects
+Quando você se preocupa apenas com os atributos dos elementos de uma model, classifique isso como um Value Object.
+- Os value Objects devem ser imutáveis.
+- Os value Objects precisam se autovalidas
+- Os Value Objects não possuem ID
+
+## Aggregate
+Um agregado é um conjunto de objetos associados que tratamos como uma unidade para propósito de mudança de dados.
+
+![](../_assets/aggregate.png "Aggregate")
