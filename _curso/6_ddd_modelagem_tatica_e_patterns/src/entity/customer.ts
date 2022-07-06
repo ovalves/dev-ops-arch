@@ -52,7 +52,7 @@ export default class Customer {
         return this._name;
     }
 
-    set Address(address: Address): void {
+    set Address(address: Address) {
         this._address = address;
     }
 }
