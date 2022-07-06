@@ -37,3 +37,21 @@ Quando você se preocupa apenas com os atributos dos elementos de uma model, cla
 Um agregado é um conjunto de objetos associados que tratamos como uma unidade para propósito de mudança de dados.
 
 ![](../_assets/aggregate.png "Aggregate")
+
+## Domain Services
+"Um serviço de domínio é uma operação sem estado que cumpre uma tarefa específica do domínio.
+Muitas vezes, a melhor indicação de que você deve criar um Serviço no modelo de domínio é quando a operação a ser executada parece não se encaixar
+como um método em um Agregado ou como um objeto de valor."
+
+> Vernon, Vaughn. Implementing Domain-Driven Design.
+
+"Quando um processo ou transformação significativa no domínio não for uma responsabilidade natural de uma ENTIDADE ou OBJETE DE VALOR, adicione uma operação
+ao modelo como uma interface autônoma declarada como um SERVIÇO. Defina a interface baseada na linguagem do modelo de domínio e certifique-se de que o nome da
+operação faça parte do UBIQUITOUS LANGUAGE. Torne o SERVIÇO sem estado."
+
+> Evans, Eric. Domain-Driven Design
+
+- Quando houver muitos Domain Services em seu projeto. TALVEZ, isso pode indicar que seus agragados estão anêmicos
+- Domain Services devem ser Stateless
+
+
