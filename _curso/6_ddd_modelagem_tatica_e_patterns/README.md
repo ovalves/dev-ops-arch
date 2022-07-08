@@ -55,4 +55,11 @@ operação faça parte do UBIQUITOUS LANGUAGE. Torne o SERVIÇO sem estado."
 - Domain Services devem ser Stateless
 
 ## Repositories
-TODO
+Um repositório comumente se refere a um local de armazenamento, geralmente considerado um local de segurança ou preservação dos itens nele armazenados.
+- Os dados armazenados em um repositório ter seu estado íntegros
+- Deve ser possível buscar um item em um repositório
+- Deve ser possível remover um item de um repositório
+- Todo tipo **Agregado** persistente deve possuir um **Repositório**
+
+> Vernon, Vaughn. Implementing Domain-Driven Design.
+
