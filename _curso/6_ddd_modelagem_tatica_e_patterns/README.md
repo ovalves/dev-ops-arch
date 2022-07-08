@@ -54,4 +54,5 @@ operação faça parte do UBIQUITOUS LANGUAGE. Torne o SERVIÇO sem estado."
 - Quando houver muitos Domain Services em seu projeto. TALVEZ, isso pode indicar que seus agragados estão anêmicos
 - Domain Services devem ser Stateless
 
-
+## Repositories
+TODO
