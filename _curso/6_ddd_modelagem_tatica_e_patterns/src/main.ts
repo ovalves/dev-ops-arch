@@ -1,5 +1,5 @@
 import Customer from './domain/customer/entity/customer';
-import Address from './domain/customer/value_objects/address';
+import Address from './domain/customer/value_object/address';
 import OrderItem from './domain/entity/aggregate/order_item';
 import Order from './domain/entity/aggregate/order';
 
