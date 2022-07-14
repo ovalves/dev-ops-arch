@@ -63,3 +63,4 @@ Um repositório comumente se refere a um local de armazenamento, geralmente cons
 
 > Vernon, Vaughn. Implementing Domain-Driven Design.
 
+## Domain Events
