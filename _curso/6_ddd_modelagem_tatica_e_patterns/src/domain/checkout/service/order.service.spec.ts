@@ -1,6 +1,6 @@
 import Order from "../../entity/aggregate/order";
 import OrderItem from "../../entity/aggregate/order_item";
-import Customer from "../../entity/customer";
+import Customer from "../../customer/entity/customer";
 import OrderService from "./order.service";
 
 describe("Order service unit tets", () => {
