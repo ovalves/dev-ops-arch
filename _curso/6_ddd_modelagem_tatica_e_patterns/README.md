@@ -64,3 +64,24 @@ Um repositório comumente se refere a um local de armazenamento, geralmente cons
 > Vernon, Vaughn. Implementing Domain-Driven Design.
 
 ## Domain Events
+Use um evento de domínio para capturar uma ocorrência de algo que aconteceu no domínio
+
+> Vernon, Vaughn. Implementing Domain-Driven Design.
+
+A essência de um evento de domínio é que você o usa para capturar coisas que podem desencadear uma mudança no estado do aplicativo que você está desenvolvendo. Esses objetos de evento são processados para causar alterações no sistema e armazenados para fornecer um AuditLog.
+
+> Fowler, Martin. Domain Event
+
+- Todo evento deve ser representado em uma ação realizada no passado:
+    - UserCreated
+    - OrderPlaced
+    - EmailSent
+
+### Domain Events - Quando utilizar
+Normalmente um Domain Event deve ser utilizado quando queremos notificar outros Bounded Contexts de uma mudança no estado.
+
+### Domain Events - Componentes
+- Event
+- Handler: Executa o processamento quando um evento é chamado
+- Event Dispatcher: Responsável por armazenar e executar os handlers de um evento quando ele for disparado.
+
