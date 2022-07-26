@@ -85,3 +85,15 @@ Normalmente um Domain Event deve ser utilizado quando queremos notificar outros 
 - Handler: Executa o processamento quando um evento é chamado
 - Event Dispatcher: Responsável por armazenar e executar os handlers de um evento quando ele for disparado.
 
+## Módulos
+Em um contexto DDD, Módulos em seu modelo servem como containers nomeados para classes de objetos de domínio que são altamente coesas entre si.
+
+O objetivo deve ser baixo acoplamento entre as classes que estão em módulos difirentes. Como os módulos usados no DDD não são compartimentos de armazenamento anêmicos ou genéricos, também é importante nomear adequadamente os Módulos.
+
+> Vernon, Vaughn. Implementing Domain-Driven Design.
+
+- Respeitar a linguagem Universal
+- Baixo acoplamento
+- Um ou mais agregados devem estar juntos somente se fazem sentido
+- Organizado pelo domínio/subdomínio e não pelo tipo de objetos
+- Devem respeitar a mesma divisão quando estão em camadas diferentes
