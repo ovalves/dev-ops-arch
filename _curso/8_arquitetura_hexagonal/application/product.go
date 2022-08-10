@@ -22,6 +22,10 @@ type ProductInterface interface {
 	GetPrice() float64
 }
 
+func init() {
+	govalidator.SetFieldsRequiredByDefault(true)
+}
+
 type Product struct {
 	ID     string  `valid:"uuidv4"`
 	Name   string  `valid:"required"`
