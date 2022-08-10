@@ -9,7 +9,9 @@ RUN go get -u github.com/spf13/cobra@latest && \
     go install github.com/spf13/cobra-cli@latest && \
     go get github.com/asaskevich/govalidator && \
     go get github.com/satori/go.uuid && \
-    go get github.com/stretchr/testify/require
+    go get github.com/stretchr/testify/require && \
+    go get github.com/golang/mock/gomock && \
+    go get github.com/mattn/go-sqlite3
 
 RUN apt-get update && apt-get install sqlite3 -y
 
