@@ -105,6 +105,10 @@ func (product *Product) GetName() string {
 	return product.Name
 }
 
+func (product *Product) SetName(name string) {
+	product.Name = name
+}
+
 func (product *Product) GetStatus() string {
 	return product.Status
 }
