@@ -18,4 +18,6 @@ Casos de uso representam intenções. Cada itenção de deve ter seu próprio ca
 * Contém dados (input ou output);
 * Não deve possuir regras de negócio.
 
+## Presenters
+Presenters são objetos de transformação, e adequa o DTO de output no formato correto para entregar o resultado. Um sistema pode ter diversos formatos de entrega: Exemplo: XML, JSON, Protobuf, GraphQL, CLI, etc.
 
