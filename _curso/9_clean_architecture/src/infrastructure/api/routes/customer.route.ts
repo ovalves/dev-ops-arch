@@ -7,8 +7,8 @@ import CustomerPresenter from '../presenters/customer.presenter';
 export const customerRoute = express.Router();
 
 customerRoute.post('/', async (req: Request, res: Response) => {
-    const usecase = new CreateCustomerUseCase(new CustomerRepository());
     try {
+        const usecase = new CreateCustomerUseCase(new CustomerRepository());
         const customerDto = {
             name: req.body.name,
             address: {
@@ -26,11 +26,15 @@ customerRoute.post('/', async (req: Request, res: Response) => {
 });
 
 customerRoute.get('/', async (req: Request, res: Response) => {
-    const usecase = new ListCustomerUseCase(new CustomerRepository());
-    const output = await usecase.execute({});
+    try {
+        const usecase = new ListCustomerUseCase(new CustomerRepository());
+        const output = await usecase.execute({});
 
-    res.format({
-        json: async () => res.send(output),
-        xml: async () => res.send(CustomerPresenter.listXML(output))
-    });
+        res.format({
+            json: async () => res.send(output),
+            xml: async () => res.send(CustomerPresenter.listXML(output))
+        });
+    } catch (err) {
+        res.status(500).send(err);
+    }
 });
