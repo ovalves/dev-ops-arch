@@ -41,7 +41,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
         try {
             customerModel = await CustomerModel.findOne({
                 where: {
-                id,
+                    id,
                 },
                 rejectOnEmpty: true,
             });
