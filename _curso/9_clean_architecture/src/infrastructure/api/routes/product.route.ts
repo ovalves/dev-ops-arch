@@ -21,11 +21,15 @@ productRoute.post('/', async (req: Request, res: Response) => {
 });
 
 productRoute.get('/', async (req: Request, res: Response) => {
-    const usecase = new ListProductUseCase(new ProductRepository());
-    const output = await usecase.execute({});
+    try {
+        const usecase = new ListProductUseCase(new ProductRepository());
+        const output = await usecase.execute({});
 
-    res.format({
-        json: async () => res.send(output),
-        xml: async () => res.send(ProductPresenter.listXML(output))
-    });
+        res.format({
+            json: async () => res.send(output),
+            xml: async () => res.send(ProductPresenter.listXML(output))
+        });
+    } catch (err) {
+        res.status(500).send(err);
+    }
 });
