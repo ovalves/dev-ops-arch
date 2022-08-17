@@ -9,7 +9,7 @@ export default class OrderRepository {
                 id: entity.id,
                 customer_id: entity.customerId,
                 total: entity.total(),
-                items: entity.items.map((item) => ({
+                items: entity.items.map((item: any) => ({
                     id: item.id,
                     name: item.name,
                     price: item.price,

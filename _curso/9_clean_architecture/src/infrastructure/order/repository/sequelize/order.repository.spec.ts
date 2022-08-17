@@ -63,6 +63,7 @@ describe("Order repository test", () => {
         const orderModel = await OrderModel.findOne({
             where: { id: order.id },
             include: ["items"],
+            rejectOnEmpty: true
         });
 
         expect(orderModel.toJSON()).toStrictEqual({
