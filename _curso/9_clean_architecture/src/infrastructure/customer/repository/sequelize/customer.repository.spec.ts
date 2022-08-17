@@ -30,7 +30,7 @@ describe("Customer repository test", () => {
         customer.Address = address;
         await customerRepository.create(customer);
 
-        const customerModel = await CustomerModel.findOne({ where: { id: "123" } });
+        const customerModel = await CustomerModel.findOne({ where: { id: "123" }, rejectOnEmpty: true });
 
         expect(customerModel.toJSON()).toStrictEqual({
             id: "123",
@@ -53,7 +53,7 @@ describe("Customer repository test", () => {
 
         customer.changeName("Customer 2");
         await customerRepository.update(customer);
-        const customerModel = await CustomerModel.findOne({ where: { id: "123" } });
+        const customerModel = await CustomerModel.findOne({ where: { id: "123" }, rejectOnEmpty: true });
 
         expect(customerModel.toJSON()).toStrictEqual({
             id: "123",
