@@ -146,7 +146,7 @@ Resiliência é um conjunto de estratégias adotadas **intencionalmente** para a
 #### Health Check
 TODO
 
-#### Rate Limit
+#### Rate Limiting
 Protege o sistema baseado em quantas requisições ele foi projetado para suportar
 
 #### Circuit Breaker
@@ -165,4 +165,11 @@ TODO
 TODO
 
 #### Garantias de entrega com Kafka
+TODO
+
+#### Transactional outbox
+Salvar os dados em uma tabela temporária antes de enviar os dados da mensagem para o Kafka. Após a confirmação de recebimento
+da mensagem pelo Kafka, podemos apagar a mensagem da tabela temporária.
+
+#### Idempotência e políticas de fallback
 TODO
