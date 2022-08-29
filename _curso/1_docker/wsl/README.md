@@ -346,6 +346,14 @@ Exemplo gerando um log na Área de trabalho
 * Infelizmente, caso reinicie o WSL manualmente, será necessário reiniciar os serviços manualmente, ou executar o init-wsl manualmente.
 * No Windows 11 é possível iniciar o Docker automaticamente, veja a seção: [Dica para Windows 11](#dica-para-windows-11)
 
+## Exportando uma imagem WSL
+
+wsl --list
+wsl --export Ubuntu20.04LTS ./wsl-backup-ubuntu.tarwsl --export Ubuntu20.04LTS ./wsl-backup-ubuntu.tar
+
+## Importando uma imagem WSL
+wsl –import <New Image Name> <Directory to store and run the image> <Directory location of the exported .tar file>
+
 ## Dúvidas
 
 * O WSL 2 funciona junto com outras máquinas virtuais como **VirtualBox** ou **VMWare**? Siga a [referência](https://docs.microsoft.com/pt-br/windows/wsl/wsl2-faq#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware-or-virtualbox)
