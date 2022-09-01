@@ -21,4 +21,5 @@ build-backend = "pdm.pep517.api"
 dev = [
     "autopep8>=1.7.0",
     "pylint>=2.15.0",
+    "pytest>=7.1.2",
 ]
