@@ -3,6 +3,7 @@ import unittest
 loader = unittest.TestLoader()
 test_modules = [
     '__shared.tests.unit.domain.test_unit_value_objects',
+    '__shared.tests.unit.domain.test_unit_entities',
     'category.tests.unit.domain.test_unit_entities'
 ]
 
