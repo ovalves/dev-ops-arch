@@ -1,8 +1,8 @@
 import unittest
+import time
 from datetime import datetime
 from category.domain.entities import Category
-from dataclasses import is_dataclass
-
+from dataclasses import is_dataclass, FrozenInstanceError
 
 class TestCategoryUnit(unittest.TestCase):
 
@@ -26,9 +26,15 @@ class TestCategoryUnit(unittest.TestCase):
 
     def test_if_created_at_is_generated_in_constructor(self):
         category1 = Category(name='Movie 1')
+        time.sleep(0.1)
         category2 = Category(name='Movie 2')
 
         self.assertNotEqual(
             category1.created_at.timestamp(),
             category2.created_at.timestamp()
         )
+
+    def test_UniqueEntityId_is_immutable(self):
+        with self.assertRaises(FrozenInstanceError):
+            value_object = Category(name='Movie 1')
+            value_object.name = 'Movie 3'
