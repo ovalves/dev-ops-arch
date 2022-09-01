@@ -14,21 +14,17 @@ class ValueObject(ABC):
 
 @dataclass(frozen=True)
 class UniqueEntityId(ValueObject):
-    __id: str = field(
+    id: str = field(
         default_factory=lambda: str(uuid.uuid4())
     )
 
     def __post_init__(self):
-        id_value = str(self.__id) if isinstance(self.__id, uuid.UUID) else self.__id
-        object.__setattr__(self, '__id', id_value)
+        id_value = str(self.id) if isinstance(self.id, uuid.UUID) else self.id
+        object.__setattr__(self, 'id', id_value)
         self.__validate()
-
-    @property
-    def id(self):
-        return self.__id
 
     def __validate(self):
         try:
-            uuid.UUID(self.__id)
+            uuid.UUID(self.id)
         except ValueError as ex:
             raise InvalidUuidException() from ex
