@@ -1,3 +1,5 @@
+# pylint: disable=unexpected-keyword-arg
+
 import unittest
 import time
 from datetime import datetime
@@ -38,3 +40,19 @@ class TestCategoryUnit(unittest.TestCase):
         with self.assertRaises(FrozenInstanceError):
             value_object = Category(name='Movie 1')
             value_object.name = 'Movie 3'
+
+    def test_update(self):
+        category = Category(name='Movie')
+        category.update('Documentary', 'some description')
+        self.assertEqual(category.name, 'Documentary')
+        self.assertEqual(category.description, 'some description')
+
+    def test_activate(self):
+        category = Category(name='Movie', is_active=False)
+        category.activate()
+        self.assertTrue(category.is_active)
+
+    def test_deactivate(self):
+        category = Category(name='Movie')
+        category.deactivate()
+        self.assertFalse(category.is_active)
