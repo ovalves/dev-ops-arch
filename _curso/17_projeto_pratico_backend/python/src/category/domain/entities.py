@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 
-@dataclass()
+@dataclass(frozen=True)
 class Category:
     name: str
     description: Optional[str] = None
