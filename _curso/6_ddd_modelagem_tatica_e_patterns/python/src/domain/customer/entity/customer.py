@@ -4,60 +4,60 @@ from domain.customer.value_object.address import Address
 
 @dataclass()
 class Customer:
-    _id: str
-    _name: str
-    _address: Optional[Address] = None
-    _active: Optional[bool] = True
-    _rewardPoints: Optional[int] = 0
+    __id: str
+    __name: str
+    __address: Optional[Address] = None
+    __active: Optional[bool] = True
+    __rewardPoints: Optional[int] = 0
 
     def __post_init__(self):
         self.validate()
 
     @property
     def id(self) -> str:
-        return self._id
+        return self.__id
 
     @property
     def name(self) -> str:
-        return self._name
+        return self.__name
 
     @property
     def reward_points(self) -> int:
-        return self._rewardPoints
+        return self.__rewardPoints
 
     @property
     def  address(self) -> Address:
-        return self._address
+        return self.__address
 
     def set_address(self, address: Address) -> None:
-        self._address = address
+        self.__address = address
 
     def changeName(self, name: str) -> None:
-        self._name = name
+        self.__name = name
         self.validate()
 
     def changeAddress(self, address: Address) -> None:
-        self._address = address
+        self.__address = address
         self.validate()
 
     def activate(self) -> None:
-        if not isinstance(self._address, Address):
+        if not isinstance(self.__address, Address):
             raise Exception("Address is mandatory to activate a customer")
 
-        self._active = True
+        self.__active = True
 
     def deactivate(self) -> None:
-        self._active = False
+        self.__active = False
 
     def is_active(self) -> bool:
-        return self._active
+        return self.__active
 
     def validate(self) -> None:
-        if len(self._id) == 0:
+        if len(self.__id) == 0:
             raise Exception("Id is required")
 
-        if len(self._name) == 0:
+        if len(self.__name) == 0:
             raise Exception("Name is required")
 
     def addRewardPoints(self, points: int) -> None:
-        self._rewardPoints += points
+        self.__rewardPoints += points
