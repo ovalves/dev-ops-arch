@@ -23,7 +23,7 @@ class TestCustomer(TestCase):
         customer = Customer("123", "John")
 
         # Act
-        customer.changeName("Jane")
+        customer.change_name("Jane")
 
         # Assert
         self.assertEqual("Jane", customer.name)
@@ -57,8 +57,8 @@ class TestCustomer(TestCase):
         customer = Customer("123", "John")
         self.assertEqual(customer.reward_points, 0)
 
-        customer.addRewardPoints(10)
+        customer.add_reward_points(10)
         self.assertEqual(customer.reward_points, 10)
 
-        customer.addRewardPoints(10)
+        customer.add_reward_points(10)
         self.assertEqual(customer.reward_points, 20)
