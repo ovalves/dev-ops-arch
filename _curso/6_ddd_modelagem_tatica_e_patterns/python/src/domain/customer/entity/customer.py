@@ -32,11 +32,11 @@ class Customer:
     def set_address(self, address: Address) -> None:
         self.__address = address
 
-    def changeName(self, name: str) -> None:
+    def change_name(self, name: str) -> None:
         self.__name = name
         self.validate()
 
-    def changeAddress(self, address: Address) -> None:
+    def change_address(self, address: Address) -> None:
         self.__address = address
         self.validate()
 
@@ -59,5 +59,5 @@ class Customer:
         if len(self.__name) == 0:
             raise Exception("Name is required")
 
-    def addRewardPoints(self, points: int) -> None:
+    def add_reward_points(self, points: int) -> None:
         self.__rewardPoints += points
