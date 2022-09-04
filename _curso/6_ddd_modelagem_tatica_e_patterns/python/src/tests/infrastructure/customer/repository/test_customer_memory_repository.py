@@ -2,9 +2,8 @@ from unittest import IsolatedAsyncioTestCase
 from domain.customer.entity.customer import Customer
 from domain.customer.value_object.address import Address
 from infrastructure.customer.repository.customer_memory_repository import CustomerMemoryRepository
-import json
 
-class TestProductService(IsolatedAsyncioTestCase):
+class TestCustomerMemoryRepository(IsolatedAsyncioTestCase):
     async def test_should_create_a_customer(self):
         # Arrange
         customer_repository = CustomerMemoryRepository()

@@ -1,10 +1,8 @@
-from dataclasses import dataclass
 from typing import Any
-from time import sleep
 from copy import deepcopy
-from domain.__shared.repository.repository_interface import RepositoryInterface
+from domain.customer.repository.customer_repository_interface import CustomerRepositoryInterface
 
-class CustomerMemoryRepository(RepositoryInterface):
+class CustomerMemoryRepository(CustomerRepositoryInterface):
     __memory = {}
 
     def __init__(self):
