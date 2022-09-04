@@ -11,9 +11,9 @@ class RepositoryInterface(ABC):
         pass
 
     @abstractmethod
-    async def find(self, entity: any) -> Any:
+    async def find(self, id: str) -> Any:
         pass
 
     @abstractmethod
-    async def findAll(self, entity: any) -> Any:
+    async def find_all(self) -> Any:
         pass
