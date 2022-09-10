@@ -20,3 +20,9 @@ class Ticket:
         self.event_code = event.code
         self.total = event.price
         self.status = "waiting_payment"
+        self.ticket_code = ticket_code
+        self.participant_name = participant_name
+        self.participant_email = participant_email
+        self.credit_card_number = credit_card_number
+        self.credit_card_cvv = credit_card_cvv
+        self.credit_card_expire = credit_card_expire

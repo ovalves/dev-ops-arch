@@ -1,6 +1,6 @@
 from uuid import uuid4
 from domain.entity.event import Event
-from application.purchase_ticket import PurchaseTicket
+from application.purchase_ticket import PurchaseTicket, Input as PurchaseTicketInput
 from infra.repository.event_memory_repository import EventMemoryRepository
 from infra.repository.ticket_memory_repository import TicketMemoryRepository
 from infra.gateway.payment_gateway import PaymentGateway
@@ -15,7 +15,7 @@ def init():
     # Repositories
     ticket_repository = TicketMemoryRepository()
     event_repository = EventMemoryRepository()
-    event_repository.save(Event("C", "Imersão Full Cycle", 100))
+    event_repository.save(Event("2RTC7", "Microservice Python", 100))
 
     # Payment Gateway
     payment_gateway = PaymentGateway(http_client)
@@ -27,15 +27,17 @@ def init():
     # Test Purchase
     purchase_ticket = PurchaseTicket(ticket_repository, event_repository, payment_gateway, queue)
     ticket_code = uuid4()
-    input = {
-        "ticket_code": ticket_code,
-		"participant_name": "A",
-		"participant_email": "B",
-		"event_code": "C",
-		"credit_card_umber": "D",
-		"credit_card_cvv": "E",
-		"credit_card_exp_date": "F"
-    }
+    purchase_ticket.execute(
+        PurchaseTicketInput(
+            ticket_code=ticket_code,
+            participant_name="José",
+            participant_email="josé@example.com",
+            event_code="2RTC7",
+            credit_card_number="0000.0000.0000.0000",
+            credit_card_cvv="000",
+            credit_card_exp_date="12/27"
+        )
+    )
 
     http_server.listen(5000)
 
