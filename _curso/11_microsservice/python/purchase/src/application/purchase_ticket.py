@@ -6,7 +6,7 @@ from infra.repository.ticket_memory_repository import TicketMemoryRepository
 from infra.gateway.payment_gateway import PaymentGateway
 from infra.queue.queue_interface import QueueInterface
 
-@dataclass()
+@dataclass(kw_only=True)
 class Input:
     ticket_code: str
     participant_name: str
@@ -15,7 +15,6 @@ class Input:
     credit_card_number: str
     credit_card_cvv: str
     credit_card_exp_date: str
-
 
 @dataclass()
 class PurchaseTicket:

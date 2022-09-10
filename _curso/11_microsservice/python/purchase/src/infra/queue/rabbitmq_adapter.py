@@ -1,3 +1,4 @@
+import json
 import pika
 from typing import Any, Callable
 from infra.queue.queue_interface import QueueInterface
@@ -36,9 +37,9 @@ class RabbitMQAdapter(QueueInterface):
 
         try:
             channel.basic_publish(
-                exchange=event_name,
+                exchange='amq.direct',
                 routing_key=event_name,
-                body=data,
+                body='hello world',
                 properties=pika.BasicProperties(
                     content_type='text/plain',
                     delivery_mode=pika.DeliveryMode.Transient
