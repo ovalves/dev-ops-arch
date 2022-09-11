@@ -26,7 +26,7 @@ def init():
 
     # Test Purchase
     purchase_ticket = PurchaseTicket(ticket_repository, event_repository, payment_gateway, queue)
-    ticket_code = uuid4()
+    ticket_code = str(uuid4())
     purchase_ticket.execute(
         PurchaseTicketInput(
             ticket_code=ticket_code,
