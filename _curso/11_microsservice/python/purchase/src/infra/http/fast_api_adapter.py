@@ -1,6 +1,5 @@
 import os
 import uvicorn
-import _thread
 from typing import Callable
 from infra.http.http_server import HttpServer
 from fastapi import FastAPI
@@ -16,9 +15,6 @@ class FastApiAdapter(HttpServer):
             description="Arquitetura baseada em microsserviços com Python.",
             version="v1"
         )
-
-    def on(self, method: str, url: str, callback: Callable) -> None:
-        print(f'on {method} {url}')
 
     def listen(self, port: int) -> None:
         uvicorn.run(self.app, host='0.0.0.0', port=port, debug=False, log_level="info")
