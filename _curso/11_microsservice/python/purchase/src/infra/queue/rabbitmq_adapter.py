@@ -37,9 +37,9 @@ class RabbitMQAdapter(QueueInterface):
 
         try:
             channel.basic_publish(
-                exchange='amq.direct',
+                exchange=event_name,
                 routing_key=event_name,
-                body='hello world',
+                body=json.dumps(data),
                 properties=pika.BasicProperties(
                     content_type='text/plain',
                     delivery_mode=pika.DeliveryMode.Transient
