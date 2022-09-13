@@ -19,7 +19,8 @@ def init():
     MainController(http_server, process_transaction)
 
     # Payment Consumer
-    PaymentConsumer(queue, process_transaction)
+    payment_consumer = PaymentConsumer(queue, process_transaction)
+    payment_consumer.consume()
 
     # Server Listen
     http_server.listen(5001)
