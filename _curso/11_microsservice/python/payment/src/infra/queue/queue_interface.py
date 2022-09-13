@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any, Callable
 
+
 class QueueInterface(ABC):
     @abstractmethod
     def connect(self) -> Any:

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from domain.entity.event import Event
 
+
 @dataclass()
 class Ticket:
     event_code: str
@@ -15,7 +16,7 @@ class Ticket:
         credit_card_number: str,
         credit_card_cvv: str,
         credit_card_expire: str,
-        event: Event
+        event: Event,
     ):
         self.event_code = event.code
         self.total = event.price

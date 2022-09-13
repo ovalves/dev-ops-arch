@@ -3,6 +3,7 @@ import asyncio
 from typing import Any
 from infra.http.http_client import HttpClient
 
+
 class AioHttpAdapter(HttpClient):
     async def get(self, url: str):
         async with aiohttp.ClientSession() as session:

@@ -3,11 +3,14 @@ import pika
 from typing import Any, Callable
 from infra.queue.queue_interface import QueueInterface
 
+
 class RabbitMQAdapter(QueueInterface):
     connection: None
 
     def connect(self) -> Any:
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+        self.connection = pika.BlockingConnection(
+            pika.ConnectionParameters("localhost")
+        )
 
     def close(self) -> Any:
         self.connection.close()
@@ -40,11 +43,10 @@ class RabbitMQAdapter(QueueInterface):
                 routing_key=event_name,
                 body=json.dumps(data),
                 properties=pika.BasicProperties(
-                    content_type='text/plain',
-                    delivery_mode=pika.DeliveryMode.Transient
-                )
+                    content_type="text/plain", delivery_mode=pika.DeliveryMode.Transient
+                ),
             )
 
-            print('Message publish was confirmed')
+            print("Message publish was confirmed")
         except pika.exceptions.UnroutableError:
-            print('Message could not be confirmed')
+            print("Message could not be confirmed")

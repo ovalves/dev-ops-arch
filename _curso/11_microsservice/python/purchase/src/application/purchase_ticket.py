@@ -7,6 +7,7 @@ from infra.repository.ticket_memory_repository import TicketMemoryRepository
 from infra.gateway.payment_gateway import PaymentGateway
 from infra.queue.queue_interface import QueueInterface
 
+
 @dataclass()
 class PurchaseTicket:
     ticket_repository: TicketMemoryRepository
@@ -23,15 +24,18 @@ class PurchaseTicket:
             input.credit_card_number,
             input.credit_card_cvv,
             input.credit_card_exp_date,
-            event
+            event,
         )
 
         self.ticket_repository.save(ticket)
 
-        self.queue.publish("ticketPurchased", {
-			"external_code": input.ticket_code,
-			"credit_card_number": input.credit_card_number,
-			"credit_card_cvv": input.credit_card_cvv,
-			"credit_card_exp_date": input.credit_card_exp_date,
-			"total": ticket.total
-		})
+        self.queue.publish(
+            "ticketPurchased",
+            {
+                "external_code": input.ticket_code,
+                "credit_card_number": input.credit_card_number,
+                "credit_card_cvv": input.credit_card_cvv,
+                "credit_card_exp_date": input.credit_card_exp_date,
+                "total": ticket.total,
+            },
+        )

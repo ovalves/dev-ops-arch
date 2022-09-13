@@ -3,6 +3,7 @@ from copy import deepcopy
 from domain.repository.event_repository import EventRepository
 from domain.entity.event import Event
 
+
 class EventMemoryRepository(EventRepository):
     __memory = {}
 
@@ -17,6 +18,6 @@ class EventMemoryRepository(EventRepository):
 
     def get(self, code: str) -> Event:
         if code not in self.__memory:
-            raise Exception('Event not found')
+            raise Exception("Event not found")
 
         return self.__memory[code][0]

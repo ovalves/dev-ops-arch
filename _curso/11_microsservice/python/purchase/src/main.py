@@ -12,6 +12,7 @@ from infra.queue.rabbitmq_adapter import RabbitMQAdapter
 from infra.controller.main_controller import MainController
 from infra.consumer.ticket_consumer import TicketConsumer
 
+
 def init():
     # Client | Server
     http_server = FastApiAdapter()
@@ -30,7 +31,9 @@ def init():
     queue.connect()
 
     # Test Purchase
-    purchase_ticket = PurchaseTicket(ticket_repository, event_repository, payment_gateway, queue)
+    purchase_ticket = PurchaseTicket(
+        ticket_repository, event_repository, payment_gateway, queue
+    )
     get_ticket = GetTicket(ticket_repository, event_repository)
 
     # Purchase API - Controller
@@ -46,5 +49,6 @@ def init():
     # Server Listen
     http_server.listen(5000)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     init()

@@ -4,6 +4,7 @@ from application.purchase_ticket import PurchaseTicket
 from infra.queue.queue_interface import QueueInterface
 from infra.repository.ticket_memory_repository import TicketMemoryRepository
 
+
 @dataclass()
 class TicketConsumer:
     queue: QueueInterface

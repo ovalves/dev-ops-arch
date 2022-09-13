@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class PurchaseTicketDTO(BaseModel):
     ticket_code: str
     participant_name: str
