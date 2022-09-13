@@ -1,20 +1,11 @@
 from typing import Any
 from dataclasses import dataclass
 from domain.entity.ticket import Ticket
+from domain.dtos.purchase_ticket_dto import PurchaseTicketDTO
 from infra.repository.event_memory_repository import EventMemoryRepository
 from infra.repository.ticket_memory_repository import TicketMemoryRepository
 from infra.gateway.payment_gateway import PaymentGateway
 from infra.queue.queue_interface import QueueInterface
-
-@dataclass(kw_only=True)
-class Input:
-    ticket_code: str
-    participant_name: str
-    participant_email: str
-    event_code: str
-    credit_card_number: str
-    credit_card_cvv: str
-    credit_card_exp_date: str
 
 @dataclass()
 class PurchaseTicket:
@@ -23,7 +14,7 @@ class PurchaseTicket:
     payment_gateway: PaymentGateway
     queue: QueueInterface
 
-    def execute(self, input: Input) -> Any:
+    def execute(self, input: PurchaseTicketDTO) -> Any:
         event = self.event_repository.get(input.event_code)
         ticket = Ticket(
             input.ticket_code,
