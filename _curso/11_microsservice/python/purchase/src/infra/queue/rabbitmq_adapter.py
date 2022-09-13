@@ -13,7 +13,6 @@ class RabbitMQAdapter(QueueInterface):
         self.connection.close()
 
     def consume(self, event_name: str, callback: Callable) -> Any:
-
         def on_message(channel, method_frame, header_frame, body):
             print(method_frame.delivery_tag)
             print(header_frame)

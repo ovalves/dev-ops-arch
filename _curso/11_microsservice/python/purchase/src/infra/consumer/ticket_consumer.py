@@ -10,6 +10,6 @@ class TicketConsumer:
     confirm_ticket: ConfirmTicket
     purchase_ticket: PurchaseTicket
 
-    def __post_init__(self):
+    def consume(self):
         self.queue.consume("transactionApproved", self.confirm_ticket.execute)
         self.queue.consume("purchaseTicket", self.purchase_ticket.execute)
