@@ -34,7 +34,6 @@ class MainController:
         @self.http_server.post("/v1/purchases", status_code=200, responses={400: {'model': BaseError}, 500: {'model': BaseError}})
         def purchase(data: PurchaseTicketDTO, response: Response):
             try:
-                self.purchase_ticket.execute(data)
                 self.queue.publish("purchaseTicket", data.json())
                 return {}
             except Exception as ex:

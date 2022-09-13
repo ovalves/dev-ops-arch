@@ -21,9 +21,9 @@ class TicketMemoryRepository(TicketRepository):
 
         return self.__memory[code][0]
 
-    def update(self, entity: Ticket) -> Any:
+    def update(self, ticket: Ticket) -> Any:
         try:
-            self.__memory.pop(entity.id, None)
-            self.create(entity)
+            self.__memory.pop(ticket.ticket_code, None)
+            self.save(ticket)
         except Exception:
             raise Exception('Could not update ticket')
