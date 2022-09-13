@@ -2,7 +2,7 @@ import os
 import uvicorn
 from typing import Callable
 from infra.http.http_server import HttpServer
-from fastapi import FastAPI, requests
+from fastapi import FastAPI
 
 class FastApiAdapter(HttpServer):
     app: None
@@ -16,12 +16,21 @@ class FastApiAdapter(HttpServer):
             version="v1"
         )
 
-    def on(self, prefix, method: str, url: str, callback: Callable):
-        method = getattr(self.app, method)
-        @method(url)
-        def prefix():
-            callback()
-            return (f"{method}, {url}")
+    @property
+    def get(self):
+            return self.app.get
+
+    @property
+    def post(self):
+            return self.app.post
+
+    @property
+    def put(self):
+            return self.app.put
+
+    @property
+    def delete(self):
+            return self.app.delete
 
     def listen(self, port: int) -> None:
         uvicorn.run(self.app, host='0.0.0.0', port=port, debug=False, log_level="info")
