@@ -40,7 +40,8 @@ def init():
     confirm_ticket = ConfirmTicket(ticket_repository)
 
     # Ticket Consumer
-    # TicketConsumer(queue, confirm_ticket, purchase_ticket)
+    # ticket_consumer = TicketConsumer(queue, confirm_ticket, purchase_ticket)
+    # ticket_consumer.consume()
 
     # Server Listen
     http_server.listen(5000)
