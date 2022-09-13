@@ -11,6 +11,7 @@ from infra.http.aiohttp_adapter import AioHttpAdapter
 from infra.queue.rabbitmq_adapter import RabbitMQAdapter
 from infra.controller.main_controller import MainController
 
+
 def init():
     # Client | Server
     http_server = FastApiAdapter()
@@ -29,7 +30,9 @@ def init():
     queue.connect()
 
     # Test Purchase
-    purchase_ticket = PurchaseTicket(ticket_repository, event_repository, payment_gateway, queue)
+    purchase_ticket = PurchaseTicket(
+        ticket_repository, event_repository, payment_gateway, queue
+    )
     get_ticket = GetTicket(ticket_repository, event_repository)
     ticket_code = str(uuid4())
     purchase_ticket.execute(
@@ -40,7 +43,7 @@ def init():
             event_code="2RTC7",
             credit_card_number="0000.0000.0000.0000",
             credit_card_cvv="000",
-            credit_card_exp_date="12/27"
+            credit_card_exp_date="12/27",
         )
     )
     print(get_ticket.execute(ticket_code))
@@ -49,5 +52,6 @@ def init():
 
     http_server.listen(5000)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     init()

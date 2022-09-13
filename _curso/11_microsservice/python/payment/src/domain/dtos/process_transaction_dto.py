@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class ProcessTransactionDTO(BaseModel):
     external_code: str
     credit_card_number: str

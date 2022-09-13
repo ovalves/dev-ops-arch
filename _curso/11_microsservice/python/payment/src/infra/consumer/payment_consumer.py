@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from application.process_transaction import ProcessTransaction
 from infra.queue.queue_interface import QueueInterface
 
+
 @dataclass()
 class PaymentConsumer:
     queue: QueueInterface

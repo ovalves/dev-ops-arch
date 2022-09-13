@@ -2,12 +2,14 @@ from dataclasses import dataclass
 from infra.repository.event_memory_repository import EventMemoryRepository
 from infra.repository.ticket_memory_repository import TicketMemoryRepository
 
+
 @dataclass(kw_only=True)
 class Output:
     participant_email: str
     event_description: str
     status: str
     total: int
+
 
 @dataclass()
 class GetTicket:

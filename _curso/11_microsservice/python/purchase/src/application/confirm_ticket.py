@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from infra.repository.ticket_memory_repository import TicketMemoryRepository
 
+
 @dataclass()
 class ConfirmTicket:
     ticket_repository: TicketMemoryRepository

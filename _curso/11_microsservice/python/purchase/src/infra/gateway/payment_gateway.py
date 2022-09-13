@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass()
 class Input:
     external_code: str
@@ -8,10 +9,12 @@ class Input:
     credit_card_exp_date: str
     total: int
 
+
 @dataclass()
 class Output:
     external_code: str
     success: bool
+
 
 @dataclass()
 class PaymentGateway:

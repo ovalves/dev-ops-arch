@@ -3,6 +3,7 @@ from copy import deepcopy
 from domain.repository.ticket_repository import TicketRepository
 from domain.entity.ticket import Ticket
 
+
 class TicketMemoryRepository(TicketRepository):
     __memory = {}
 
@@ -17,7 +18,7 @@ class TicketMemoryRepository(TicketRepository):
 
     def get(self, code: str) -> Any:
         if code not in self.__memory:
-            raise Exception('Ticket not found')
+            raise Exception("Ticket not found")
 
         return self.__memory[code][0]
 
@@ -26,4 +27,4 @@ class TicketMemoryRepository(TicketRepository):
             self.__memory.pop(ticket.ticket_code, None)
             self.save(ticket)
         except Exception:
-            raise Exception('Could not update ticket')
+            raise Exception("Could not update ticket")

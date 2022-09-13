@@ -4,6 +4,7 @@ from infra.queue.rabbitmq_adapter import RabbitMQAdapter
 from infra.controller.main_controller import MainController
 from infra.consumer.payment_consumer import PaymentConsumer
 
+
 def init():
     # RabbitMQ
     queue = RabbitMQAdapter()
@@ -25,5 +26,6 @@ def init():
     # Server Listen
     http_server.listen(5001)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     init()
