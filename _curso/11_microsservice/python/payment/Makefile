@@ -5,8 +5,7 @@ test:
 	nose2 -v --with-coverage --coverage-report html --coverage-report term --coverage-report xml
 
 code_formatter:
-	black database
-	black tests
+	black src
 
 mutation:
 	mutmut run --disable-mutation-types=decorator
