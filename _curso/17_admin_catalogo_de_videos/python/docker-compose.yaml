@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  mongo:
+    image: bitnami/mongodb:4.2.20-debian-10-r24
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MONGODB_DATABASE=admin_catalogo_de_videos
+    volumes:
+      - ./.docker/mongodb:/docker-entrypoint-initdb.d
+    ports:
+      - 27017:27017

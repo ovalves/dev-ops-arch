@@ -3,7 +3,7 @@ from dataclasses import dataclass, field, asdict
 from typing import Any
 from __shared.domain.value_objects import UniqueEntityId
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class Entity(ABC):
     # pylint: disable=unnecessary-lambda
     unique_entity_id: UniqueEntityId = field(
