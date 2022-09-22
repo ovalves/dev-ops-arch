@@ -7,10 +7,10 @@ from __shared.domain.entities import Entity
 from __shared.domain.value_objects import UniqueEntityId
 
 
-@dataclass(frozen=True, kw_only=True)
+@dataclass(frozen=True)
 class StubEntity(Entity):
-    prop1: str
-    prop2: str
+    prop1: str = None
+    prop2: str = None
 
 
 class TestEntityUnit(unittest.TestCase):

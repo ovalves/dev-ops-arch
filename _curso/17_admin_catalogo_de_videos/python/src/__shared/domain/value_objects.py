@@ -4,7 +4,7 @@ from abc import ABC
 from dataclasses import dataclass, field, fields
 from __shared.domain.exceptions import InvalidUuidException
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class ValueObject(ABC):
     def __str__(self) -> str:
         fields_name = [field.name for field in fields(self)]
