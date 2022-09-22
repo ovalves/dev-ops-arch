@@ -6,9 +6,11 @@ from __shared.domain.entities import Entity
 
 @dataclass(frozen=True)
 class Category(Entity):
-    name: str
+    name: str = ""
     description: Optional[str] = None
     is_active: Optional[bool] = True
+
+    # pylint: disable=unnecessary-lambda
     created_at: Optional[datetime] = field(default_factory=lambda: datetime.now())
 
     def update(self, name: str, description: str) -> None:
