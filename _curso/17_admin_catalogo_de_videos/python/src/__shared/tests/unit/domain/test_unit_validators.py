@@ -118,3 +118,47 @@ class TestValidatorRulesUnit(unittest.TestCase):
             self.assertIsInstance(
                 ValidatorRules.values(i["value"], i["prop"]).boolean(), ValidatorRules
             )
+
+    def test_throw_a_validation_exception_when_combine_two_or_more_rules(self):
+        with self.assertRaises(ValidationException) as context:
+            ValidatorRules.values(None, "prop").required().string().max_length(5)
+        self.assertEqual(
+            "The prop is required",
+            str(context.exception),
+        )
+
+        with self.assertRaises(ValidationException) as context:
+            ValidatorRules.values(5, "prop").required().string().max_length(5)
+        self.assertEqual(
+            "The prop must be a string",
+            str(context.exception),
+        )
+
+        with self.assertRaises(ValidationException) as context:
+            ValidatorRules.values("t" * 6, "prop").required().string().max_length(5)
+        self.assertEqual(
+            "The prop must be less than 5 characters",
+            str(context.exception),
+        )
+
+        with self.assertRaises(ValidationException) as context:
+            ValidatorRules.values(None, "prop").required().boolean()
+        self.assertEqual(
+            "The prop is required",
+            str(context.exception),
+        )
+
+        with self.assertRaises(ValidationException) as context:
+            ValidatorRules.values(5, "prop").required().boolean()
+        self.assertEqual(
+            "The prop must be a boolean",
+            str(context.exception),
+        )
+
+    def test_valid_cases_for_combination_between_rules(self):
+        ValidatorRules("test", "prop").required().string()
+        ValidatorRules("t" * 5, "prop").required().string().max_length(5)
+
+        ValidatorRules(True, "prop").required().boolean()
+        ValidatorRules(False, "prop").required().boolean()
+        self.assertTrue(True)
