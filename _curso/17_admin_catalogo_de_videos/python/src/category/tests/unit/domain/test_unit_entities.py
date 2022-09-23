@@ -3,6 +3,7 @@
 import unittest
 import time
 from datetime import datetime
+from unittest.mock import patch
 from category.domain.entities import Category
 from dataclasses import is_dataclass, FrozenInstanceError
 
@@ -40,9 +41,11 @@ class TestCategoryUnit(unittest.TestCase):
             value_object = Category(name="Movie 1")
             value_object.name = "Movie 3"
 
-    def test_update(self):
+    @patch('category.domain.entities.ValidatorRules')
+    def test_update(self, mock_validator_rules):
         category = Category(name="Movie")
         category.update("Documentary", "some description")
+        mock_validator_rules.values.assert_called()
         self.assertEqual(category.name, "Documentary")
         self.assertEqual(category.description, "some description")
 
