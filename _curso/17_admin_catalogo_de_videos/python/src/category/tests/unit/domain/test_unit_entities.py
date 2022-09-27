@@ -41,7 +41,7 @@ class TestCategoryUnit(unittest.TestCase):
             value_object = Category(name="Movie 1")
             value_object.name = "Movie 3"
 
-    @patch('category.domain.entities.ValidatorRules')
+    @patch("category.domain.entities.ValidatorRules")
     def test_update(self, mock_validator_rules):
         category = Category(name="Movie")
         category.update("Documentary", "some description")
