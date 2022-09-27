@@ -62,9 +62,9 @@ confidence=
 # --disable=W".
 disable=W0703,
         E0401,
-        C0116,
         C0114,
-        C0115
+        C0115,
+        C0116,
 
 
 # Enable the message, report, category or checker with the given id(s). You can
