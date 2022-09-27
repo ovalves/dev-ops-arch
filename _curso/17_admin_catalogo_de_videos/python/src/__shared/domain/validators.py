@@ -5,7 +5,7 @@ from __shared.domain.exceptions import ValidationException
 
 
 ErrorFields = Dict[str, List[str]]
-PropsValidated = TypeVar('PropsValidated')
+PropsValidated = TypeVar("PropsValidated")
 
 
 @dataclass(slots=True)
@@ -16,6 +16,7 @@ class ValidatorFieldsInterface(ABC, Generic[PropsValidated]):
     @abstractmethod
     def validate(self, data: Any) -> bool:
         raise NotImplementedError()
+
 
 @dataclass(frozen=True)
 class ValidatorRules:

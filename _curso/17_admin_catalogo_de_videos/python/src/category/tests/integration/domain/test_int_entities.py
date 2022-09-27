@@ -1,4 +1,3 @@
-
 # pylint: disable=unexpected-keyword-arg
 import unittest
 from category.domain.entities import Category
