@@ -1,10 +1,21 @@
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any, Dict, List
+from typing import Any, Dict, Generic, List, TypeVar
 from __shared.domain.exceptions import ValidationException
 
 
 ErrorFields = Dict[str, List[str]]
+PropsValidated = TypeVar('PropsValidated')
 
+
+@dataclass(slots=True)
+class ValidatorFieldsInterface(ABC, Generic[PropsValidated]):
+    errors: ErrorFields = None
+    validated_data: PropsValidated = None
+
+    @abstractmethod
+    def validate(self, data: Any) -> bool:
+        raise NotImplementedError()
 
 @dataclass(frozen=True)
 class ValidatorRules:

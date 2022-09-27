@@ -43,6 +43,8 @@ make mutation
 
 ## Pesquisar
 
+- patterns:
+    - Notification Pattern
 - testes
     - Piramide de testes
     - Testes de mutação
