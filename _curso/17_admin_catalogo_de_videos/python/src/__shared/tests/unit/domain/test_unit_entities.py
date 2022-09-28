@@ -9,8 +9,8 @@ from __shared.domain.value_objects import UniqueEntityId
 
 @dataclass(frozen=True)
 class StubEntity(Entity):
-    prop1: str = None
-    prop2: str = None
+    prop1: str = ""
+    prop2: str = ""
 
 
 class TestEntityUnit(unittest.TestCase):
