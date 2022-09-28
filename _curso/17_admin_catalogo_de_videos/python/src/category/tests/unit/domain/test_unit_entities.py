@@ -36,25 +36,26 @@ class TestCategoryUnit(unittest.TestCase):
             category1.created_at.timestamp(), category2.created_at.timestamp()
         )
 
-    def test_UniqueEntityId_is_immutable(self):
+    def test_unique_entity_id_is_immutable(self):
         with self.assertRaises(FrozenInstanceError):
             value_object = Category(name="Movie 1")
             value_object.name = "Movie 3"
 
-    @patch("category.domain.entities.ValidatorRules")
-    def test_update(self, mock_validator_rules):
-        category = Category(name="Movie")
-        category.update("Documentary", "some description")
-        mock_validator_rules.values.assert_called()
-        self.assertEqual(category.name, "Documentary")
-        self.assertEqual(category.description, "some description")
+    def test_update(self):
+        with patch.object(Category, "validate"):
+            category = Category(name="Movie")
+            category.update("Documentary", "some description")
+            self.assertEqual(category.name, "Documentary")
+            self.assertEqual(category.description, "some description")
 
     def test_activate(self):
-        category = Category(name="Movie", is_active=False)
-        category.activate()
-        self.assertTrue(category.is_active)
+        with patch.object(Category, "validate"):
+            category = Category(name="Movie", is_active=False)
+            category.activate()
+            self.assertTrue(category.is_active)
 
     def test_deactivate(self):
-        category = Category(name="Movie")
-        category.deactivate()
-        self.assertFalse(category.is_active)
+        with patch.object(Category, "validate"):
+            category = Category(name="Movie")
+            category.deactivate()
+            self.assertFalse(category.is_active)

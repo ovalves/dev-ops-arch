@@ -43,6 +43,10 @@ make mutation
 
 ## Pesquisar
 
+- libs python:
+    - attrs (validação)
+    - pydantic (validação)
+    - django rest framework
 - patterns:
     - Notification Pattern
 - testes

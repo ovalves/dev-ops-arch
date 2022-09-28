@@ -7,6 +7,7 @@ test:
 
 code_formatter:
 	black src
+	black src/**/tests
 
 mutation:
 	mutmut run --disable-mutation-types=decorator
