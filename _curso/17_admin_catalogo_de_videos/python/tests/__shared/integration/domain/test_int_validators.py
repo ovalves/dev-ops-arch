@@ -1,6 +1,6 @@
 import unittest
 from rest_framework import serializers
-from __shared.domain.validators import DRFValidator
+from src.__shared.validators.drf_validator_adapter import DRFValidatorAdapter
 
 
 # pylint: disable=abstract-method
@@ -11,7 +11,7 @@ class StubSerializer(serializers.Serializer):
 
 class TestDRFValidatorIntegration(unittest.TestCase):
     def test_validation_with_error(self):
-        validator = DRFValidator()
+        validator = DRFValidatorAdapter()
         serializer = StubSerializer(data={})
         is_valid = validator.validate(serializer)
         self.assertFalse(is_valid)
@@ -21,7 +21,7 @@ class TestDRFValidatorIntegration(unittest.TestCase):
         )
 
     def test_validate_without_error(self):
-        validator = DRFValidator()
+        validator = DRFValidatorAdapter()
         serializer = StubSerializer(data={"name": "some value", "price": 5})
         is_valid = validator.validate(serializer)
         self.assertTrue(is_valid)

@@ -1,10 +1,10 @@
 from datetime import datetime
 from dataclasses import dataclass, field
 from typing import Optional
+from category.factory.category_validator_factory import CategoryValidatorFactory
 from __shared.domain.entities import Entity
-from __shared.domain.exceptions import EntityValidationException
-from __shared.domain.validators import ValidatorRules
-from category.domain.validators import CategoryValidatorFactory
+from __shared.exceptions import EntityValidationException
+from __shared.validators.custom_validator_adapter import CustomValidatorAdapter
 
 
 @dataclass(kw_only=True, frozen=True, slots=True)
@@ -33,9 +33,9 @@ class Category(Entity):
 
     # @classmethod
     # def validate(cls, name: str, description: str, is_active: bool = None):
-    #     ValidatorRules.values(name, "name").required().string().max_length(255)
-    #     ValidatorRules.values(description, "description").string()
-    #     ValidatorRules.values(is_active, "is_active").boolean()
+    #     CustomValidatorAdapter.values(name, "name").required().string().max_length(255)
+    #     CustomValidatorAdapter.values(description, "description").string()
+    #     CustomValidatorAdapter.values(is_active, "is_active").boolean()
 
     def validate(self):
         validator = CategoryValidatorFactory.create()

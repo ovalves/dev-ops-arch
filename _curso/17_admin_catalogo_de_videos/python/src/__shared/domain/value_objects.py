@@ -2,7 +2,7 @@ import uuid
 import json
 from abc import ABC
 from dataclasses import dataclass, field, fields
-from __shared.domain.exceptions import InvalidUuidException
+from src.__shared.exceptions import InvalidUuidException
 
 
 @dataclass(frozen=True)

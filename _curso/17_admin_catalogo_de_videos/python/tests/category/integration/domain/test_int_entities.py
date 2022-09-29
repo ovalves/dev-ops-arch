@@ -1,7 +1,7 @@
 # pylint: disable=unexpected-keyword-arg
 import unittest
-from category.domain.entities import Category
-from __shared.domain.exceptions import EntityValidationException
+from src.category.domain.category import Category
+from src.__shared.exceptions import EntityValidationException
 
 
 class TestCategoryIntegration(unittest.TestCase):

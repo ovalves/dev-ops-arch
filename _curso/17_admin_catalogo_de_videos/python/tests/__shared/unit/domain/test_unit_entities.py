@@ -1,16 +1,16 @@
 # pylint: disable=unexpected-keyword-arg
 
+import unittest
 from abc import ABC
 from dataclasses import dataclass, is_dataclass
-import unittest
-from __shared.domain.entities import Entity
-from __shared.domain.value_objects import UniqueEntityId
+from src.__shared.domain.entities import Entity
+from src.__shared.domain.value_objects import UniqueEntityId
 
 
 @dataclass(frozen=True)
 class StubEntity(Entity):
-    prop1: str = ""
-    prop2: str = ""
+    prop1: str = "value1"
+    prop2: str = "value2"
 
 
 class TestEntityUnit(unittest.TestCase):

@@ -4,7 +4,7 @@ import unittest
 import time
 from datetime import datetime
 from unittest.mock import patch
-from category.domain.entities import Category
+from category.domain.category import Category
 from dataclasses import is_dataclass, FrozenInstanceError
 
 
