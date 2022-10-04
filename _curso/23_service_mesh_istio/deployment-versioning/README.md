@@ -1,0 +1,1 @@
+![](../../_assets/deployment-versioning.png "Deploy com versionamento")
