@@ -41,14 +41,16 @@ Pode ser usado com:
 ![](../_assets/istiod.png "Arquitetura do Istio")
 > istiod
 
-### Criando cluster K8s com K3D
+### Criando cluster K8s com minikube
 ```bash
-k3d cluster create -p "7000:30000@loadbalancer" --agents 2
+.minikube/k8s-minikube.sh start # starts the minikube cluster (alias: up)
 ```
 
 
 ### Criando tunnel com minikube
 ```bash
+# tunnel creates a route to services deployed with type LoadBalancer and sets their Ingress to their ClusterIP.
+# for a detailed example see https://minikube.sigs.k8s.io/docs/tasks/loadbalancer
 minikube tunnel
 ```
 
@@ -60,7 +62,7 @@ kubectl -n istio-system get svc kiali
 
 ### Instalando Istio no cluster
 ```bash
-istioctl install
+.minikube/k8s-minikube.sh istio # installs Istio into the minikube cluster
 ```
 
 #### Injetando Envoy sidecar proxies
@@ -77,6 +79,18 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/ad
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/addons/kiali.yaml
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/addons/prometheus.yaml
 ```
+
+### Instalando o Fortio
+```bash
+go install fortio.org/fortio@latest
+cp /home/viniciusoa/.asdf/installs/golang/1.19.1/packages/bin/fortio /usr/local/bin
+```
+
+### Executando requisições com Fortio
+```bash
+fortio load -c 2 -qps 0 -t 200s -loglevel Warning http://10.105.70.198:8000
+```
+
 
 ### Gerenciamento de trafego
 
