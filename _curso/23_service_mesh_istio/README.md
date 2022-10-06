@@ -123,3 +123,6 @@ TODO
 
 ### Circuit Breaker
 TODO
+
+### Gateways
+TODO

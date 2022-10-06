@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-error
+spec:
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+        version: "504"
+    spec:
+      containers:
+      - name: sample-app
+        image: ovalves/circuit-breaker-example-go:error-504
+        ports:
+        - containerPort: 8000
+        env:
+          - name: error
+            value: "yes"

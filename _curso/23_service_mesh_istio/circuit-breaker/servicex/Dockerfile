@@ -1,10 +1,10 @@
-FROM golang:1.16 As builder
+FROM golang:1.19.1 As builder
 ENV GO111MODULE=off
 WORKDIR /app
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-w' -o servicex
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-w' -o sample-app
 
 FROM scratch
 WORKDIR /app
-COPY --from=builder /app/servicex .
-CMD ["/app/servicex"]
+COPY --from=builder /app/sample-app .
+CMD ["/app/sample-app"]
