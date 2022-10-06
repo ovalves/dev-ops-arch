@@ -71,3 +71,4 @@ echo "Forwarding local port [${LOCAL_PORT}] to Kiali server port [${REMOTE_PORT}
 echo "To access Kiali, point your browser to http://localhost:${LOCAL_PORT}/kiali/console"
 
 ${CLIENT_EXE} ${CONTEXT_ARG} -n ${ISTIO_NAMESPACE} port-forward $(${CLIENT_EXE} ${CONTEXT_ARG} -n ${ISTIO_NAMESPACE} get pod -l app.kubernetes.io/name=kiali -o jsonpath='{.items[0].metadata.name}') ${LOCAL_PORT}:${REMOTE_PORT}
+
