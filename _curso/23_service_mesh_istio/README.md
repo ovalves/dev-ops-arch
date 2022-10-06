@@ -119,3 +119,7 @@ Com o Virtual Service podemos configurar regras para:
 - Least Conn
 
 ### Stick Session e Consistent Hash
+TODO
+
+### Circuit Breaker
+TODO
