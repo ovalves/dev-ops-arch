@@ -93,6 +93,7 @@ fortio load -c 2 -qps 0 -t 200s -loglevel Warning http://10.105.70.198:8000
 
 
 ### Gerenciamento de trafego
+É possível colocar regras de trafego na destination rule ou nos subsets da destination rule
 
 #### Gateway
 Gerencia a entrada e saída do trafego. Trabalha nas layers 4-6, garantindo o gerenciamento de portas, host e TLS.
@@ -111,3 +112,10 @@ Com o Virtual Service podemos configurar regras para:
 - Fault Injection
 - Retries
 - Timeout
+
+#### Tipos de Load Balancer
+- Round-robin (K8s default)
+- random
+- Least Conn
+
+### Stick Session e Consistent Hash

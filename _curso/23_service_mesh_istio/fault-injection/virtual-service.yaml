@@ -3,7 +3,7 @@ kind: VirtualService
 metadata:
   name: nginx-vs
 spec:
-  hosts: 
+  hosts:
   - nginx-service
   http:
     - fault:
@@ -15,23 +15,7 @@ spec:
           httpStatus: 504
           percentage:
             value: 100
-      route:  
+      route:
       - destination:
           host: nginx-service
           subset: all
----
-
-apiVersion: networking.istio.io/v1alpha3
-kind: DestinationRule
-metadata:
-  name: nginx-dr
-spec:
-  host: nginx-service
-  trafficPolicy:
-    loadBalancer:
-      consistentHash:
-        httpHeaderName: "x-user"
-  subsets:
-    - name: all
-      labels:
-        app: nginx

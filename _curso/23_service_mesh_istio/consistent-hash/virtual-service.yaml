@@ -9,9 +9,4 @@ spec:
     - route:
       - destination:
           host: nginx-service
-          subset: v1
-        weight: 70
-      - destination:
-          host: nginx-service
-          subset: v2
-        weight: 30
+          subset: all
