@@ -1,0 +1,11 @@
+{
+    "name": "gitops-test-server",
+    "version": "1.0.0",
+    "description": "GitOps Test Server",
+    "main": "index.js",
+    "scripts": {},
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {}
+}
