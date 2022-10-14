@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-node-server
+spec:
+  selector:
+    matchLabels:
+      app: gitops-node-server
+  template:
+    metadata:
+      labels:
+        app: gitops-node-server
+    spec:
+      containers:
+      - name: gitops-node-server
+        image: gitops-node-server
+        ports:
+        - containerPort: 8080
