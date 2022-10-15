@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: gitops-node-server-service
+  namespace: spv
 spec:
   selector:
     app: gitops-node-server

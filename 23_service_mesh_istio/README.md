@@ -41,9 +41,13 @@ Pode ser usado com:
 ![](../_assets/istiod.png "Arquitetura do Istio")
 > istiod
 
-### Criando cluster K8s com minikube
+### Criando cluster local no K8s
 ```bash
-.minikube/k8s-minikube.sh start # starts the minikube cluster (alias: up)
+.minikube/k8s-minikube.sh start
+
+or
+
+kind create cluster -n sample-cluster
 ```
 
 
@@ -62,7 +66,7 @@ kubectl -n istio-system get svc kiali
 
 ### Instalando Istio no cluster
 ```bash
-.minikube/k8s-minikube.sh istio # installs Istio into the minikube cluster
+istioctl install -y
 ```
 
 #### Injetando Envoy sidecar proxies
