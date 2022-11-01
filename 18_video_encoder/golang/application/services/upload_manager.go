@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+	"time"
 
 	"cloud.google.com/go/storage"
 )
@@ -24,6 +25,7 @@ func NewVideoUpload() *VideoUpload {
 }
 
 func (vu *VideoUpload) UploadObject(objectPath string, client *storage.Client, ctx context.Context) error {
+	timeout, _ := time.ParseDuration(os.Getenv("AWS_UPLOAD_TIMEOUT"))
 	path := strings.Split(objectPath, os.Getenv("localStoragePath")+"/")
 
 	f, err := os.Open(objectPath)

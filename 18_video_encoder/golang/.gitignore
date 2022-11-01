@@ -1,5 +1,6 @@
 .idea
 .env
+.aws
 bucket-credential.json
 .pgdata
 .devcontainer
