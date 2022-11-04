@@ -4,11 +4,12 @@ import (
 	"encoder/domain"
 	"encoder/framework/utils"
 	"encoding/json"
-	uuid "github.com/satori/go.uuid"
-	"github.com/streadway/amqp"
 	"os"
 	"sync"
 	"time"
+
+	uuid "github.com/satori/go.uuid"
+	"github.com/streadway/amqp"
 )
 
 type JobWorkerResult struct {
@@ -23,7 +24,7 @@ func JobWorker(messageChannel chan amqp.Delivery, returnChan chan JobWorkerResul
 
 	//{
 	//	"resource_id":"id do video da pessoa que enviou para nossa fila",
-	//	"file_path": "convite.mp4"
+	//	"file_path": "file_example_MP4_480_1_5MG.mp4"
 	//}
 
 	for message := range messageChannel {

@@ -1,9 +1,13 @@
 package main
 
 import (
-	aws_client "encoder/infra/aws"
+	"encoder/application/repositories"
+	"encoder/domain"
+	"encoder/framework/database"
+	s3_client "encoder/infra/aws"
 	"log"
 	"os"
+	"time"
 
 	"github.com/joho/godotenv"
 )
@@ -15,8 +19,24 @@ func loadEnv() {
 	}
 }
 
+func prepare() (*domain.Video, repositories.VideoRepositoryDb) {
+	db := database.NewDbTest()
+	defer db.Close()
+
+	video := domain.NewVideo()
+	video.ID = "file_example_MP4_480_1_5MG.mp4"
+	video.FilePath = "file_example_MP4_480_1_5MG.mp4"
+	video.CreatedAt = time.Now()
+
+	repo := repositories.VideoRepositoryDb{Db: db}
+
+	return video, repo
+}
+
 func main() {
 	loadEnv()
-	awsClient := aws_client.NewAwsClient()
-	awsClient.Upload(os.Stdin, "ola mundo")
+	awsClient := s3_client.NewAwsClient()
+	awsClient.Upload(os.Stdin, "file_example_MP4_480_1_5MG.mp4")
+
+	awsClient.Download("file_example_MP4_480_1_5MG.mp4")
 }

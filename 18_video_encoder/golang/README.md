@@ -28,7 +28,7 @@ Para que uma mensagem possa ser parseada pelo sistema de encoder, ela deverá ch
 ```
 {
   "resource_id": "my-resource-id-can-be-a-uuid-type",
-  "file_path": "convite.mp4"
+  "file_path": "file_example_MP4_480_1_5MG.mp4"
 }
 ```
 
@@ -51,7 +51,7 @@ Caso o processamento tenha sido concluído com sucesso, o padrão de retorno em 
     "video":{
         "encoded_video_folder":"b3f2d41e-2c0a-4830-bd65-68227e97764f",
         "resource_id":"aadc5ff9-0b0d-13ab-4a40-a11b2eaa148c",
-        "file_path":"convite.mp4"
+        "file_path":"file_example_MP4_480_1_5MG.mp4"
     },
     "Error":"",
     "created_at":"2020-05-27T19:43:34.850479-04:00",
@@ -69,7 +69,7 @@ Caso o processamento tenha encontrado algum erro, o padrão de retorno em json s
 {
     "message": {
         "resource_id": "aadc5ff9-010d-a3ab-4a40-a11b2eaa148c",
-        "file_path": "convite.mp4"
+        "file_path": "file_example_MP4_480_1_5MG.mp4"
     },
     "error":"Motivo do erro"
 }

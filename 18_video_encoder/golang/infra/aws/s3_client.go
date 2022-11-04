@@ -1,9 +1,10 @@
-package aws_client
+package s3_client
 
 import (
 	"context"
 	"fmt"
 	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -11,25 +12,29 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/aws/aws-sdk-go/service/s3/s3manager"
 )
 
 type AwsClient struct {
 	svc      s3.S3
 	ctx      context.Context
+	session  *session.Session
 	cancelFn func()
 }
 
 func NewAwsClient() *AwsClient {
-	aws_client := &AwsClient{}
-	aws_client.service()
-	aws_client.requestContext()
-	return aws_client
+	aws_client := AwsClient{}
+	aws_client.createSessionService()
+	aws_client.createRequestContext()
+	return &aws_client
 }
 
-func (client *AwsClient) service() {
+func (client *AwsClient) createSessionService() {
 	_client := session.Must(session.NewSessionWithOptions(session.Options{
 		SharedConfigState: session.SharedConfigEnable,
 	}))
+
+	client.session = _client
 
 	_svc := s3.New(_client, &aws.Config{
 		CredentialsChainVerboseErrors: aws.Bool(true),
@@ -38,7 +43,7 @@ func (client *AwsClient) service() {
 	client.svc = *_svc
 }
 
-func (client *AwsClient) requestContext() {
+func (client *AwsClient) createRequestContext() {
 	timeout, _ := time.ParseDuration(os.Getenv("AWS_UPLOAD_TIMEOUT"))
 
 	ctx := context.Background()
@@ -72,4 +77,32 @@ func (client *AwsClient) Upload(file *os.File, filename string) {
 	}
 
 	fmt.Printf("successfully uploaded file to %s/%s\n", os.Getenv("AWS_BUCKET_NAME"), os.Getenv("AWS_OBJECT_KEY"))
+}
+
+func (client *AwsClient) Download(item string) {
+	file, err := os.Create(filepath.Join(os.Getenv("localStoragePath"), item))
+	if err != nil {
+		fmt.Printf("Error in downloading from file %s: %v \n", item, err)
+		os.Exit(1)
+	}
+
+	defer file.Close()
+
+	downloader := s3manager.NewDownloader(client.session, func(d *s3manager.Downloader) {
+		d.PartSize = 64 * 1024 * 1024
+		d.Concurrency = 6
+	})
+
+	numBytes, err := downloader.Download(file,
+		&s3.GetObjectInput{
+			Bucket: aws.String(os.Getenv("AWS_BUCKET_NAME")),
+			Key:    aws.String(item),
+		})
+
+	if err != nil {
+		fmt.Printf("Error in downloading. The file %s was not found in Bucket %v \n", item, err)
+		os.Exit(1)
+	}
+
+	fmt.Println("Download completed", file.Name(), numBytes, "bytes")
 }

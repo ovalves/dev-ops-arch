@@ -27,7 +27,8 @@ func prepare() (*domain.Video, repositories.VideoRepositoryDb) {
 
 	video := domain.NewVideo()
 	video.ID = uuid.NewV4().String()
-	video.FilePath = "convite.mp4"
+	// video.ID = "file_example_MP4_480_1_5MG"
+	video.FilePath = "file_example_MP4_480_1_5MG.mp4"
 	video.CreatedAt = time.Now()
 
 	repo := repositories.VideoRepositoryDb{Db: db}
@@ -43,7 +44,7 @@ func TestVideoServiceDownload(t *testing.T) {
 	videoService.Video = video
 	videoService.VideoRepository = repo
 
-	err := videoService.Download("spvfileshare")
+	err := videoService.Download()
 	require.Nil(t, err)
 
 	err = videoService.Fragment()
