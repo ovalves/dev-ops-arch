@@ -1,5 +1,12 @@
 # Microsserviço de encoder de vídeo
 
+## Build da imagem docker
+```bash
+ docker build --network host -t go/encoder-dev:1.0 .
+docker run --rm -p 8000:8080 go/encoder-dev:1.0
+```
+
+
 ## Configurando ambiente
 
 Para rodar em modo de desenvolvimento, siga os seguintes passos:
