@@ -9,7 +9,7 @@
 127.0.0.1:6379>
 ```
 
-### Set
+### SET
 ```
 ❯ redis-cli
 
@@ -19,7 +19,7 @@
 127.0.0.1:6379>
 ```
 
-### MSet (Multiple Set)
+### MSET (Multiple SET)
 ```
 ❯ redis-cli
 
@@ -37,6 +37,30 @@
 (integer) 1
 127.0.0.1:6379> GET "total_votes"
 (nil)
+127.0.0.1:6379>
+```
+
+### HSET, HGET (HASH SET, GET)
+```
+❯ redis-cli
+
+127.0.0.1:6379> HSET "election:2022:04:20" "total_votes" 95
+127.0.0.1:6379> HSET "election:2022:04:20" "daily_votes" 20
+
+127.0.0.1:6379> HGET "election:2022:04:20" "total_votes"
+"95"
+
+127.0.0.1:6379> HGET "election:2022:04:20" "daily_votes"
+"20"
+127.0.0.1:6379>
+```
+
+### HDEL (Delete Hash)
+```
+❯ redis-cli
+
+127.0.0.1:6379> HDEL "election:2022:04:20" "total_votes"
+(integer) 1
 127.0.0.1:6379>
 ```
 
