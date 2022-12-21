@@ -30,7 +30,7 @@ TODO
 ## Value Objects
 Quando você se preocupa apenas com os atributos dos elementos de uma model, classifique isso como um Value Object.
 - Os value Objects devem ser imutáveis.
-- Os value Objects precisam se autovalidas
+- Os value Objects precisam se auto validar
 - Os Value Objects não possuem ID
 
 ## Aggregate
