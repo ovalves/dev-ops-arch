@@ -2,7 +2,7 @@ import json
 import time
 import random
 from faker import Faker
-from producer import producer, message_sender
+from producer import send_message
 fake = Faker()
 
 def main():
@@ -17,10 +17,7 @@ def main():
             "signup_at": str(fake.date_time_this_month()),
         }
 
-        message = json.dumps(data)
-        producer.poll(1)
-        producer.produce("students", message.encode("utf-8"), callback=message_sender)
-        producer.flush()
+        send_message(data)
         time.sleep(3)
 
 

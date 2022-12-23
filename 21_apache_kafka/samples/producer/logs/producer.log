@@ -1,20 +1,12 @@
-23-12-2022 11:12:14 Produced message on topic: students | value: {"id": 53282, "name": "Ashley Pollard", "street": "1397 Patrick Falls Apt. 691", "city": "Michaelhaven", "code": "TJ", "platform": "Laptop", "signup_at": "2022-12-10 01:45:49"}
+23-12-2022 11:26:13 Produced message on topic: students | value: {"id": 90178, "name": "Samantha Vaughan", "street": "44527 Craig Rapid Suite 103", "city": "North William", "code": "HN", "platform": "Laptop", "signup_at": "2022-12-02 15:24:42"}
 
-23-12-2022 11:12:18 Produced message on topic: students | value: {"id": 61392, "name": "Mark Adams", "street": "23879 Robles Cove", "city": "East Christopherfort", "code": "MA", "platform": "Tablet", "signup_at": "2022-12-15 11:53:54"}
+23-12-2022 11:26:17 Produced message on topic: students | value: {"id": 40328, "name": "Emma Miller", "street": "1627 Larry River Suite 949", "city": "South Ruth", "code": "PG", "platform": "Mobile", "signup_at": "2022-12-10 23:43:03"}
 
-23-12-2022 11:12:22 Produced message on topic: students | value: {"id": 36940, "name": "Louis Anderson", "street": "8075 Hayden Pike Apt. 723", "city": "Michaelbury", "code": "LU", "platform": "Tablet", "signup_at": "2022-12-07 12:41:20"}
+23-12-2022 11:26:21 Produced message on topic: students | value: {"id": 82220, "name": "Gregory Collins", "street": "62302 Foster Springs", "city": "Port Jennifer", "code": "CD", "platform": "Tablet", "signup_at": "2022-12-22 21:16:44"}
 
-23-12-2022 11:12:26 Produced message on topic: students | value: {"id": 53966, "name": "Jean Brown", "street": "90068 Elijah Unions Suite 979", "city": "East Brandy", "code": "TM", "platform": "Mobile", "signup_at": "2022-12-16 09:19:16"}
+23-12-2022 11:26:25 Produced message on topic: students | value: {"id": 73517, "name": "George Lara", "street": "613 Dylan Road", "city": "Thomasside", "code": "IL", "platform": "Laptop", "signup_at": "2022-12-12 12:07:20"}
 
-23-12-2022 11:12:30 Produced message on topic: students | value: {"id": 76928, "name": "Lisa Moran", "street": "04945 Johnson Valley", "city": "North Shelley", "code": "LK", "platform": "Mobile", "signup_at": "2022-12-11 03:17:35"}
+23-12-2022 11:26:29 Produced message on topic: students | value: {"id": 24012, "name": "Daniel Miller", "street": "7499 Griffin Fall Suite 247", "city": "Jaclynborough", "code": "PW", "platform": "Tablet", "signup_at": "2022-12-08 18:42:12"}
 
-23-12-2022 11:12:34 Produced message on topic: students | value: {"id": 42666, "name": "James Cunningham", "street": "43956 David Valleys", "city": "North Cassandramouth", "code": "PY", "platform": "Tablet", "signup_at": "2022-12-22 17:14:56"}
-
-23-12-2022 11:12:38 Produced message on topic: students | value: {"id": 63877, "name": "Kaitlin Barr", "street": "41862 Tran Terrace Apt. 600", "city": "Millerside", "code": "UZ", "platform": "Mobile", "signup_at": "2022-12-01 15:06:25"}
-
-23-12-2022 11:12:42 Produced message on topic: students | value: {"id": 76906, "name": "Nancy Ellis", "street": "81445 Crystal Viaduct Apt. 030", "city": "Brentville", "code": "CZ", "platform": "Tablet", "signup_at": "2022-12-14 14:30:15"}
-
-23-12-2022 11:12:46 Produced message on topic: students | value: {"id": 95530, "name": "Emily Rodriguez", "street": "1951 Charles Circle", "city": "Lake Mallory", "code": "KM", "platform": "Laptop", "signup_at": "2022-12-14 23:21:10"}
-
-23-12-2022 11:12:50 Produced message on topic: students | value: {"id": 35749, "name": "Jordan Velez", "street": "65901 Keith Villages Suite 802", "city": "East Bryanchester", "code": "DE", "platform": "Tablet", "signup_at": "2022-12-05 07:29:58"}
+23-12-2022 11:26:33 Produced message on topic: students | value: {"id": 52875, "name": "Cassandra Rodriguez", "street": "8369 Juarez Drive", "city": "Port Kathryn", "code": "BB", "platform": "Tablet", "signup_at": "2022-12-18 00:35:00"}
 
