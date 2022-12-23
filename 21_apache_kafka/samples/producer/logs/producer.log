@@ -1,12 +1,4 @@
-23-12-2022 11:26:13 Produced message on topic: students | value: {"id": 90178, "name": "Samantha Vaughan", "street": "44527 Craig Rapid Suite 103", "city": "North William", "code": "HN", "platform": "Laptop", "signup_at": "2022-12-02 15:24:42"}
+23-12-2022 11:29:49 Produced message on topic: students | value: {"id": 84889, "name": "Melanie Davis", "street": "894 George Orchard", "city": "Meganhaven", "code": "GB", "platform": "Mobile", "signup_at": "2022-12-04 03:34:51"}
 
-23-12-2022 11:26:17 Produced message on topic: students | value: {"id": 40328, "name": "Emma Miller", "street": "1627 Larry River Suite 949", "city": "South Ruth", "code": "PG", "platform": "Mobile", "signup_at": "2022-12-10 23:43:03"}
-
-23-12-2022 11:26:21 Produced message on topic: students | value: {"id": 82220, "name": "Gregory Collins", "street": "62302 Foster Springs", "city": "Port Jennifer", "code": "CD", "platform": "Tablet", "signup_at": "2022-12-22 21:16:44"}
-
-23-12-2022 11:26:25 Produced message on topic: students | value: {"id": 73517, "name": "George Lara", "street": "613 Dylan Road", "city": "Thomasside", "code": "IL", "platform": "Laptop", "signup_at": "2022-12-12 12:07:20"}
-
-23-12-2022 11:26:29 Produced message on topic: students | value: {"id": 24012, "name": "Daniel Miller", "street": "7499 Griffin Fall Suite 247", "city": "Jaclynborough", "code": "PW", "platform": "Tablet", "signup_at": "2022-12-08 18:42:12"}
-
-23-12-2022 11:26:33 Produced message on topic: students | value: {"id": 52875, "name": "Cassandra Rodriguez", "street": "8369 Juarez Drive", "city": "Port Kathryn", "code": "BB", "platform": "Tablet", "signup_at": "2022-12-18 00:35:00"}
+23-12-2022 11:29:53 Produced message on topic: students | value: {"id": 88300, "name": "Christine Nash", "street": "0923 Jose Motorway", "city": "West Thomasburgh", "code": "PH", "platform": "Tablet", "signup_at": "2022-12-15 16:53:15"}
 

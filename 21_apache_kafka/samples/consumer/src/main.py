@@ -1,8 +1,8 @@
-from consumer import consumer
+from consumer import get_message, close_consumer
 
 def main():
     while True:
-        msg = consumer.poll(1.0)
+        msg = get_message()
         if msg is None:
             continue
 
@@ -15,7 +15,7 @@ def main():
         print(msg.value().decode("utf-8"))
         print("===================")
 
-    # consumer.close()
+    # close_consumer()
 
 
 if __name__ == "__main__":
