@@ -1,0 +1,5 @@
+Flask==2.0.1
+gunicorn==20.0.4
+requests==2.27.1
+confluent-kafka==1.9.2
+Faker==15.3.4

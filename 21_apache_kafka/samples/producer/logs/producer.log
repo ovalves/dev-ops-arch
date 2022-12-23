@@ -1,0 +1,20 @@
+23-12-2022 10:31:26 Produced message on topic: students | value: {"id": 80074, "name": "Robert Hutchinson", "street": "202 Welch Springs Suite 870", "city": "Jessicashire", "code": "AG", "platform": "Mobile", "signup_at": "2022-12-05 12:58:11"}
+
+23-12-2022 10:31:30 Produced message on topic: students | value: {"id": 79702, "name": "Mary Cox", "street": "059 Bill Valley Suite 218", "city": "Smithstad", "code": "AT", "platform": "Laptop", "signup_at": "2022-12-08 12:19:35"}
+
+23-12-2022 10:31:34 Produced message on topic: students | value: {"id": 46166, "name": "Megan Owens", "street": "910 Donovan Inlet", "city": "Vargasville", "code": "HU", "platform": "Mobile", "signup_at": "2022-12-22 02:09:58"}
+
+23-12-2022 10:31:38 Produced message on topic: students | value: {"id": 95950, "name": "Mark Willis", "street": "933 Shepherd Causeway Suite 656", "city": "Joeltown", "code": "VE", "platform": "Tablet", "signup_at": "2022-12-11 02:18:06"}
+
+23-12-2022 10:31:42 Produced message on topic: students | value: {"id": 96896, "name": "Jacqueline Bailey DVM", "street": "5889 Doyle Cliff Suite 760", "city": "South Melissa", "code": "MD", "platform": "Laptop", "signup_at": "2022-12-05 07:10:00"}
+
+23-12-2022 10:31:46 Produced message on topic: students | value: {"id": 67469, "name": "Christopher Reyes", "street": "72443 Robin Garden Apt. 783", "city": "Lake Karenmouth", "code": "IL", "platform": "Tablet", "signup_at": "2022-12-11 14:11:26"}
+
+23-12-2022 10:31:50 Produced message on topic: students | value: {"id": 57027, "name": "Christopher Murray", "street": "8862 Ashley Radial", "city": "Port Brittanybury", "code": "LY", "platform": "Laptop", "signup_at": "2022-12-08 19:15:23"}
+
+23-12-2022 10:31:54 Produced message on topic: students | value: {"id": 79428, "name": "Justin Riley", "street": "9709 Lee Falls Suite 551", "city": "Carrollton", "code": "RS", "platform": "Laptop", "signup_at": "2022-12-18 17:42:06"}
+
+23-12-2022 10:31:58 Produced message on topic: students | value: {"id": 65959, "name": "Ashley Palmer", "street": "0781 Heather Fields Apt. 874", "city": "West Matthew", "code": "YE", "platform": "Laptop", "signup_at": "2022-12-17 20:53:42"}
+
+23-12-2022 10:32:02 Produced message on topic: students | value: {"id": 40680, "name": "Maria Bautista", "street": "680 Norton Fords", "city": "West Theresa", "code": "TV", "platform": "Tablet", "signup_at": "2022-12-02 01:42:51"}
+
