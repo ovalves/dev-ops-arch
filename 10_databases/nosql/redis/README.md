@@ -55,6 +55,16 @@
 127.0.0.1:6379>
 ```
 
+### HMSET (Hash Multiple SET)
+```
+❯ redis-cli
+
+127.0.0.1:6379> HMSET "session:user:1995" "name" "ovalves" "shopping_cart" 10
+127.0.0.1:6379> HGET "session:user:1995" "name"
+"ovalves"
+127.0.0.1:6379>
+```
+
 ### HDEL (Delete Hash)
 ```
 ❯ redis-cli
@@ -105,4 +115,70 @@
 1) "count:vote:log:1997-07-21"
 2) "count:vote:log:1997-12-21"
 3) "count:vote:log:2022-12-21"
+```
+
+### Expire - TTL
+```
+❯ redis-cli
+
+127.0.0.1:6379> EXPIRE "session:user:1995" 10
+127.0.0.1:6379> TTL "session:user:1995"
+```
+
+### INCR
+```
+❯ redis-cli
+
+127.0.0.1:6379> INCR "page:home:1995-04-20"
+(integer) 1
+127.0.0.1:6379> INCR "page:home:1995-04-20"
+(integer) 2
+127.0.0.1:6379> INCR "page:home:1995-04-20"
+(integer) 3
+```
+
+### INCRBY
+```
+❯ redis-cli
+
+127.0.0.1:6379> INCRBY "page:home:1995-04-20" 10
+(integer) 11
+127.0.0.1:6379> INCRBY "page:home:1995-04-20" 10
+(integer) 21
+```
+
+### DECR
+```
+❯ redis-cli
+
+127.0.0.1:6379> DECR "page:home:1995-04-20"
+(integer) 3
+127.0.0.1:6379> DECR "page:home:1995-04-20"
+(integer) 2
+127.0.0.1:6379> DECR "page:home:1995-04-20"
+(integer) 1
+```
+
+### DECRBY
+```
+❯ redis-cli
+
+127.0.0.1:6379> DECRBY "page:home:1995-04-20" 10
+(integer) 21
+127.0.0.1:6379> DECRBY "page:home:1995-04-20" 10
+(integer) 11
+```
+
+### SETBIT - GETBIT - BITCOUNT
+```
+❯ redis-cli
+
+127.0.0.1:6379> SETBIT "session:1995-04-20:user" 1 1
+(integer) 1
+
+127.0.0.1:6379> GETBIT "session:1995-04-20:user" 1
+(integer) 1
+
+127.0.0.1:6379> BITCOUNT "session:1995-04-20:user"
+(integer) 1
 ```
