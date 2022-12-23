@@ -9,5 +9,4 @@ consumer = Consumer(
 )
 
 print("Kafka Consumer has been initiated...")
-print("Available topics to consume: ", consumer.list_topics().topics)
 consumer.subscribe(["students"])

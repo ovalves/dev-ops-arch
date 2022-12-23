@@ -10,7 +10,10 @@ def main():
             print(f"Error: {msg.error()}")
             continue
 
+
+        print("===================")
         print(msg.value().decode("utf-8"))
+        print("===================")
 
     # consumer.close()
 
