@@ -182,3 +182,14 @@
 127.0.0.1:6379> BITCOUNT "session:1995-04-20:user"
 (integer) 1
 ```
+
+### FLUSHALL
+```
+❯ redis-cli
+
+127.0.0.1:6379> flushall
+OK
+
+127.0.0.1:6379> KEYS *
+(empty list or set)
+```
