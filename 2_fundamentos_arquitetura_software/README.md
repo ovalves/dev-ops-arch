@@ -167,6 +167,12 @@ TODO
 #### Garantias de entrega com Kafka
 TODO
 
+#### Garantias de recebimento
+TODO
+
+#### Observabilidade
+TODO
+
 #### Transactional outbox
 Salvar os dados em uma tabela temporária antes de enviar os dados da mensagem para o Kafka. Após a confirmação de recebimento
 da mensagem pelo Kafka, podemos apagar a mensagem da tabela temporária.
