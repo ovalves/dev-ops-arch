@@ -3,7 +3,7 @@
 > https://www.consul.io/
 
 - Descobre as máquinas disponíveis para acesso
-- Segmentação de máquindas para garantir segurança
+- Segmentação de máquinas para garantir segurança
 - Resolução via DNS
 - Health Check
 
