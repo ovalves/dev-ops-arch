@@ -25,3 +25,10 @@ Formato completo para trafegar as informações. Trafega toda a informação (pa
 ## CQRS
 
 ## Event Sourcing + CQRS
+
+## Elementos táticos de um contexto de eventos
+- Evento (Carregar dados)
+- Operações que serão executados quando um evento é chamado
+- Gerenciador dos eventos/operações
+    - Registrar os eventos e suas operações
+    - Despachar o evento para executar as operações

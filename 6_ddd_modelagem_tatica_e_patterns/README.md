@@ -21,8 +21,8 @@ TODO
 ### Consistência
 TODO
 
-### Princípio da Autovalidação
-Todas as entidades do sistema precisam se autovaliar, para garantir que nenhum de seus atributos recebam dados incorretos vindos de outras partes do sistema.
+### Princípio da Auto validação
+Todas as entidades do sistema precisam se auto validar, para garantir que nenhum de seus atributos recebam dados incorretos vindos de outras partes do sistema.
 
 ### Entidade vs ORM
 TODO
