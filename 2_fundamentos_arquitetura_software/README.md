@@ -41,7 +41,7 @@
 
 ### Estruturais
 - Configurável
-    - A aplicação precisa ser facilmente configurávekm uu seja, eu preciso alterar uma conexão com o banco de dados, e como é que eu faço? Eu tenho que alterar de uma forma hard coded? Ou eu vou trabalhar com um arquivo de variável de ambiente, onde eu falo qual é a minha variável de ambiente e ele utiliza essas variáveis para passar uma string de conexão com o banco de dados?
+    - A aplicação precisa ser facilmente configurável uu seja, eu preciso alterar uma conexão com o banco de dados, e como é que eu faço? Eu tenho que alterar de uma forma hard coded? Ou eu vou trabalhar com um arquivo de variável de ambiente, onde eu falo qual é a minha variável de ambiente e ele utiliza essas variáveis para passar uma string de conexão com o banco de dados?
 - Extensibilidade
     - Sua aplicação tem que estar pensada para que ela consiga crescer, ou seja, ela tem que crescer de forma com que as coisas possam ser plugadas nela. E normalmente essas coisas que são plugadas muitas vezes são aspectos de terceiros.
 - Fácil Instalação
