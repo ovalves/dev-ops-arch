@@ -61,6 +61,17 @@ Usado para parâmetros dinâmicos na execução do container
 CMD [ "World!"]
 ```
 
+## Networks
+```
+docker network ls
+```
+
+Tipos:
+- bridge
+- host
+- overlay
+
+
 ## Bind Mounts
 ...
 
@@ -69,3 +80,31 @@ CMD [ "World!"]
 
 ## Comandos úteis
 ...
+
+## Criando imagem node
+```
+docker run --rm -it -v $(pwd)/:usr/src/app -p 3000:3000 node:15 bash
+```
+
+![](../_assets/node-docker.png "imagem node")
+> imagem node
+
+```
+npm init
+npm install express --save
+touch index.js
+```
+
+```js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(function(req, res, next) {
+    res.send('<h1>Olá Mundo!!!</h1>')
+});
+
+app.listen(port, function() {
+    console.log('listening on port ' + port)
+});
+```
