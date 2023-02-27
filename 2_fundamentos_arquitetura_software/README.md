@@ -41,7 +41,7 @@
 
 ### Estruturais
 - Configurável
-    - A aplicação precisa ser facilmente configurávekm uu seja, eu preciso alterar uma conexão com o banco de dados, e como é que eu faço? Eu tenho que alterar de uma forma hard coded? Ou eu vou trabalhar com um arquivo de variável de ambiente, onde eu falo qual é a minha variável de ambiente e ele utiliza essas variáveis para passar uma string de conexão com o banco de dados?
+    - A aplicação precisa ser facilmente configurável uu seja, eu preciso alterar uma conexão com o banco de dados, e como é que eu faço? Eu tenho que alterar de uma forma hard coded? Ou eu vou trabalhar com um arquivo de variável de ambiente, onde eu falo qual é a minha variável de ambiente e ele utiliza essas variáveis para passar uma string de conexão com o banco de dados?
 - Extensibilidade
     - Sua aplicação tem que estar pensada para que ela consiga crescer, ou seja, ela tem que crescer de forma com que as coisas possam ser plugadas nela. E normalmente essas coisas que são plugadas muitas vezes são aspectos de terceiros.
 - Fácil Instalação
@@ -57,7 +57,7 @@
     - Você tem que estar muito ciente qual vai ser o público que vai acessar sua aplicação.
 
 - Processo de retenção e recuperação de dados
-    - Hoje em dia existem formas interessantes para se trabalhar com dados que você precisa e que você utiliza a toda hora. Devemos pensar em como vamos acessar esses dados. Vamos deixar os dados ali no banco rodando localmente? Há casos onde existem dados que você não utiliza a toda hora, mas você precisa desses dados por questões de compliance, questões legais ou mesmo para criar relatórios para área de negócio. Então, o que você pode fazer é simplesmente pegar esses dados, compactar e automaticamente ir deixando guardado em um storage que acabam sendo mais baratos. O Elastic Search trabalha assim. Se você pegar, por exemplo, o Prometeus, que utiliza um Time Series Database, você vai perceber que ele tem muito mais precisão nas métricas, utilizando os dados mais quentes. E quanto mais longe estiverem aquelas informações das métricas que você vai utilizar, vai diminuindo a precisão.
+    - Hoje em dia existem formas interessantes para se trabalhar com dados que você precisa e que você utiliza a toda hora. Devemos pensar em como vamos acessar esses dados. Vamos deixar os dados ali no banco rodando localmente? Há casos onde existem dados que você não utiliza a toda hora, mas você precisa desses dados por questões de compliance, questões legais ou mesmo para criar relatórios para área de negócio. Então, o que você pode fazer é simplesmente pegar esses dados, compactar e automaticamente ir deixando guardado em um storage que acabam sendo mais baratos. O Elastic Search trabalha assim. Se você pegar, por exemplo, o Prometheus, que utiliza um Time Series Database, você vai perceber que ele tem muito mais precisão nas métricas, utilizando os dados mais quentes. E quanto mais longe estiverem aquelas informações das métricas que você vai utilizar, vai diminuindo a precisão.
 
 - Autenticação e Autorização
     - Quando estamos trabalhando em uma Arquitetura distribuída, normalmente usamos um identity provider, ou seja, um provedor de Identidade. Precisamos pensar em como os microsserviços devem acessar o sistema de autenticação?
@@ -138,7 +138,7 @@ Soluções populares:
 ### Resiliência
 Resiliência é um conjunto de estratégias adotadas **intencionalmente** para a **adaptação** de um sistema para quando uma falha ocorre.
 
-#### Proteger se ser protegido
+#### Proteger e ser protegido
 - Um sistema em uma arquitetura distribuída precisa adotar mecanismos de autopreservação para garantir ao máximo sua operação com **qualidade**
 - Um sistema não pode ser **egoísta** ao ponto de realizar mais requisições em um outro sistema que está falhando
 - Um sistema lento no ar muitas vezes é pior do que um sistema fora do ar
