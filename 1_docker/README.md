@@ -108,3 +108,20 @@ app.listen(port, function() {
     console.log('listening on port ' + port)
 });
 ```
+
+## Criando imagem laravel com nginx
+
+```
+docker network create samplenet
+```
+
+### laravel
+```
+docker build -t ovalves/laravel:1.0 .
+docker run -d --network samplenet --name laravel ovalves/laravel:1.0
+```
+### nginx
+```
+docker build -t ovalves/nginx:1.0 .
+docker run -d --network samplenet --name nginx -p 8080:80 ovalves/nginx:1.0
+```
