@@ -83,3 +83,9 @@ Para escalar a aplicação de exemplo iremos usar o *Redis scaler*:
 ❯ kubectl exec $(kubectl get pods | grep "api" | cut -f 1 -d " ") -- keda-sample redis drain
 ```
 
+## Port Forwarding
+```bash
+❯ kubectl port-forward POD_NAME HOST_PORT:POD_PORT
+
+# ❯ kubectl port-forward sample-app 8000:3003
+```
