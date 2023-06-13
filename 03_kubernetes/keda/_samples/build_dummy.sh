@@ -1,0 +1,1 @@
+docker build -t keda-sample/dummy-app -f dummy.Dockerfile .

@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+  labels:
+    app: api
+spec:
+  ports:
+    - port: 3003
+  selector:
+    app: api
+    tier: frontend
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  labels:
+    app: api
+spec:
+  selector:
+    matchLabels:
+      app: api
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: api
+        tier: frontend
+    spec:
+      containers:
+        - name: master
+          image: keda-sample/sample-app
+          imagePullPolicy: Never
+          args:
+            - api
+          ports:
+            - containerPort: 3003
+              name: api
+          env:
+            - name: REDIS_ADDRESS
+              value: "redis:6379"
+          resources:
+            limits:
+              memory: "100"
+              cpu: "100"

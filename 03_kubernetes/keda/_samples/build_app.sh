@@ -1,0 +1,1 @@
+docker build -t keda-sample/sample-app .
