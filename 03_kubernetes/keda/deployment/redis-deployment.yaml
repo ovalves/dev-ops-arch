@@ -32,7 +32,3 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 6379
-          resources:
-                limits:
-                  memory: "100"
-                  cpu: "100"

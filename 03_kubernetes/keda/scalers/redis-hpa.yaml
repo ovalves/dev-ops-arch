@@ -7,8 +7,8 @@ metadata:
     deploymentName: dummy
 spec:
   maxReplicaCount: 4
-  pollingInterval: 3  # Optional. Default: 30 seconds
-  cooldownPeriod:  5 # Optional. Default: 300 seconds
+  pollingInterval: 3
+  cooldownPeriod:  5
   scaleTargetRef:
     name: dummy
   triggers:

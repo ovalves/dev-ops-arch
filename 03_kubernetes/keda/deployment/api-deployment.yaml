@@ -43,7 +43,3 @@ spec:
           env:
             - name: REDIS_ADDRESS
               value: "redis:6379"
-          resources:
-            limits:
-              memory: "100"
-              cpu: "100"
