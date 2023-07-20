@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any, Generic
-from src.__shared.types import ErrorFields, PropsValidated
+from src.__shared.domain.types import ErrorFields, PropsValidated
 
 
 @dataclass(slots=True)

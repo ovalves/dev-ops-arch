@@ -1,7 +1,7 @@
-from __shared.rules.serializer import Serializer
+from __shared.domain.serializer import CustomSerializer
 
 
-class CustomCategoryRules(Serializer):
+class CustomCategoryRules(CustomSerializer):
     name = "string|required|max_length:255"
     description = "required|max_length:5"
     is_active = "boolean|required"

@@ -6,7 +6,7 @@ from typing import Any, Generic, List, Optional, TypeVar
 
 from __shared.domain.value_objects import UniqueEntityId
 from __shared.domain.entities import Entity
-from __shared.types import ENTITY
+from __shared.domain.types import ENTITY
 
 
 class RepositoryInterface(Generic[ENTITY], ABC):
@@ -18,7 +18,7 @@ class RepositoryInterface(Generic[ENTITY], ABC):
         raise NotImplementedError()
 
     @abc.abstractmethod
-    def find_by_id(self, entity_id: str | UniqueEntityId) -> ET:
+    def find_by_id(self, entity_id: str | UniqueEntityId) -> ENTITY:
         raise NotImplementedError()
 
     @abc.abstractmethod

@@ -3,7 +3,7 @@ from abc import ABC
 from unittest.mock import patch
 from dataclasses import FrozenInstanceError, dataclass, is_dataclass
 from src.__shared.domain.value_objects import UniqueEntityId, ValueObject
-from src.__shared.exceptions import InvalidUuidException
+from src.__shared.domain.exceptions import InvalidUuidException
 
 
 @dataclass(frozen=True)

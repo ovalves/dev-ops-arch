@@ -1,8 +1,8 @@
 from abc import ABC
 from rest_framework.fields import BooleanField, CharField
 from rest_framework.serializers import Serializer
-from src.__shared.types import PropsValidated
-from src.__shared.validators.interface import ValidatorFieldsInterface
+from src.__shared.domain.types import PropsValidated
+from src.__shared.domain.validators.interface import ValidatorFieldsInterface
 
 
 class DRFValidatorAdapter(

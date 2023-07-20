@@ -1,9 +1,9 @@
 from abc import ABC
 from dataclasses import dataclass
 from typing import Any
-from src.__shared.exceptions import ValidationException
-from src.__shared.types import PropsValidated
-from src.__shared.validators.interface import ValidatorFieldsInterface
+from src.__shared.domain.exceptions import ValidationException
+from src.__shared.domain.types import PropsValidated
+from src.__shared.domain.validators.interface import ValidatorFieldsInterface
 
 # @dataclass(frozen=True)
 # class CustomValidatorAdapter:

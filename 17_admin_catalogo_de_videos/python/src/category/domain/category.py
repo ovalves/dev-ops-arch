@@ -3,8 +3,8 @@ from dataclasses import dataclass, field
 from typing import Optional
 from category.factory.category_validator_factory import CategoryValidatorFactory
 from __shared.domain.entities import Entity
-from __shared.exceptions import EntityValidationException
-from __shared.validators.custom_validator_adapter import CustomValidatorAdapter
+from src.__shared.domain.exceptions import EntityValidationException
+from src.__shared.domain.validators.custom_validator_adapter import CustomValidatorAdapter
 
 
 @dataclass(kw_only=True, frozen=True, slots=True)

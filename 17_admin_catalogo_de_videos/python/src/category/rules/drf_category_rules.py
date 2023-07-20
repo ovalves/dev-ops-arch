@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from src.__shared.validators.drf_validator_adapter import (
+from src.__shared.domain.validators.drf_validator_adapter import (
     DRFStrictBooleanField,
     DRFStrictCharField,
 )

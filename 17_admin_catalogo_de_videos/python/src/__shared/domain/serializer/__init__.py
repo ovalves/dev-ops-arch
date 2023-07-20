@@ -1,7 +1,7 @@
 from typing import Dict, List
 
 
-class Serializer:
+class CustomSerializer:
     __rules: Dict = {}
     __errors: List = []
 
