@@ -33,8 +33,8 @@ class InMemoryRepository(RepositoryInterface[ENTITY], ABC):
         self.items[index] = entity
 
     def delete(self, entity_id: str | UniqueEntityId) -> None:
-        entity_found = str(entity_id)
-        self.items.remove(entity_found)
+        if item := self._get(str(entity_id)):
+            self.items.remove(item)
 
     def _get(self, entity_id: str) -> ENTITY:
         if entity := next(
