@@ -40,29 +40,3 @@ Rode o comando abaixo para execução dos testes de mutação através do `mutmu
 ```
 make mutation
 ```
-
-## Pesquisar
-
-- libs python:
-    - attrs (validação)
-    - pydantic (validação)
-    - django rest framework
-- patterns:
-    - Notification Pattern
-- testes
-    - Piramide de testes
-    - Testes de mutação
-- python
-    - Dataclass
-    - peps
-        - pep 8
-        - [pep 582](https://peps.python.org/pep-0582/)
-    - package managers
-        - pip
-        - Poetry
-        - PDM
-            - pip install pdm
-            - pdm init
-            - pdm add autopep8
-        - pipenv
-        - autopep8 install
