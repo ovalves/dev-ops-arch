@@ -1,12 +1,41 @@
 version: '3'
 
 services:
-  mongo:
-    image: bitnami/mongodb:4.2.20-debian-10-r24
-    environment:
-      - ALLOW_EMPTY_PASSWORD=yes
-      - MONGODB_DATABASE=admin_catalogo_de_videos
+  app:
+    build: .
+    container_name: micro-videos-python-app
     volumes:
-      - ./.docker/mongodb:/docker-entrypoint-initdb.d
+      - .:/app
     ports:
-      - 27017:27017
+      - 5000:8000
+    networks:
+      - dev-ops-arch
+
+  db:
+    image: mysql:8.0.30-debian
+    container_name: micro-videos-python-db
+    profiles:
+      - dev
+    environment:
+      - MYSQL_DATABASE=micro-videos
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./.docker/dbdata:/var/lib/mysql:delegated
+    networks:
+      - dev-ops-arch
+
+  db_test:
+    image: mysql:8.0.30-debian
+    container_name: micro-videos-python-db-test
+    environment:
+      - MYSQL_DATABASE=micro-videos-test
+      - MYSQL_ROOT_PASSWORD=root
+    tmpfs:
+      - /var/lib/mysql
+    networks:
+      - dev-ops-arch
+
+networks:
+  dev-ops-arch:
+    name: dev-ops-arch-network
+    driver: bridge
