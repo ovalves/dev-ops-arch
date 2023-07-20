@@ -1,6 +1,6 @@
 from abc import ABC
 from dataclasses import Field, dataclass, field, asdict
-from typing import Any
+from typing import Any, Dict
 from src.__shared.domain.value_objects import UniqueEntityId
 
 
@@ -11,14 +11,14 @@ class Entity(ABC):
 
     # pylint: disable=invalid-name
     @property
-    def id(self):
+    def id(self) -> str:
         return str(self.unique_entity_id)
 
     def _set(self, name: str, value: Any):
         object.__setattr__(self, name, value)
         return self
 
-    def to_dict(self):
+    def to_dict(self) -> Dict:
         entity_dict = asdict(self)
         entity_dict.pop("unique_entity_id")
         entity_dict["id"] = self.id

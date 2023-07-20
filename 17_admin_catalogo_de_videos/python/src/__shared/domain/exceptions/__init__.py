@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from __shared.domain.validators import ErrorFields
+    from src.__shared.domain.validators import ErrorFields
 
 
 class InvalidUuidException(Exception):

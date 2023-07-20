@@ -4,9 +4,9 @@ from dataclasses import dataclass, field
 import math
 from typing import Any, Generic, List, Optional, TypeVar
 
-from __shared.domain.value_objects import UniqueEntityId
-from __shared.domain.entities import Entity
-from __shared.domain.types import ENTITY
+from src.__shared.domain.value_objects import UniqueEntityId
+from src.__shared.domain.entities import Entity
+from src.__shared.domain.types import ENTITY
 
 
 class RepositoryInterface(Generic[ENTITY], ABC):

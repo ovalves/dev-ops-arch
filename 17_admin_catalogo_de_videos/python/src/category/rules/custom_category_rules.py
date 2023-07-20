@@ -1,4 +1,4 @@
-from __shared.domain.serializer import CustomSerializer
+from src.__shared.domain.serializer import CustomSerializer
 
 
 class CustomCategoryRules(CustomSerializer):
