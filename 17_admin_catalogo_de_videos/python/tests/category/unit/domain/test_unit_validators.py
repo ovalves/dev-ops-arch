@@ -1,6 +1,8 @@
 import unittest
-from src.category.validators.category_validator import DRFCategoryValidator
-from src.category.factory.category_validator_factory import CategoryValidatorFactory
+from src.category.domain.validators.category_validator import DRFCategoryValidator
+from src.category.domain.factory.category_validator_factory import (
+    CategoryValidatorFactory,
+)
 
 
 class TestCategoryValidatorUnit(unittest.TestCase):

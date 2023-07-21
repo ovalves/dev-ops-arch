@@ -1,7 +1,9 @@
 from datetime import datetime
 from dataclasses import dataclass, field
 from typing import Optional
-from category.factory.category_validator_factory import CategoryValidatorFactory
+from src.category.domain.factory.category_validator_factory import (
+    CategoryValidatorFactory,
+)
 from src.__shared.domain.entities import Entity
 from src.__shared.domain.exceptions import EntityValidationException
 from src.__shared.domain.validators.custom_validator_adapter import (

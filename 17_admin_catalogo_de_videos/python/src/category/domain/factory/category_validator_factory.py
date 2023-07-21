@@ -1,4 +1,4 @@
-from category.validators.category_validator import (
+from src.category.domain.validators.category_validator import (
     DRFCategoryValidator,
     CustomCategoryValidator,
 )

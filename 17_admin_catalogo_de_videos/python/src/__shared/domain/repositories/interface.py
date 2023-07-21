@@ -1,12 +1,9 @@
 import abc
 from abc import ABC
-from dataclasses import dataclass, field
-import math
 from typing import Any, Generic, List, Optional, TypeVar
 
 from src.__shared.domain.value_objects import UniqueEntityId
-from src.__shared.domain.entities import Entity
-from src.__shared.domain.types import ENTITY
+from src.__shared.domain.types import ENTITY, Input, Output
 
 
 class RepositoryInterface(Generic[ENTITY], ABC):
@@ -31,4 +28,14 @@ class RepositoryInterface(Generic[ENTITY], ABC):
 
     @abc.abstractmethod
     def delete(self, entity_id: str | UniqueEntityId) -> None:
+        raise NotImplementedError()
+
+
+class SearchableRepositoryInterface(
+    Generic[ENTITY, Input, Output], RepositoryInterface[ENTITY], ABC
+):
+    sortable_fields: List[str] = []
+
+    @abc.abstractmethod
+    def search(self, input_params: Input) -> Output:
         raise NotImplementedError()

@@ -1,0 +1,27 @@
+from typing import List
+from src.category.domain.entities.category import Category
+from src.category.domain.repositories import CategoryRepository
+from src.__shared.domain.repositories import InMemorySearchableRepository
+from src.__shared.domain.repositories.memory import InMemoryRepository
+
+
+class CategoryInMemoryRepository(CategoryRepository, InMemoryRepository):
+    sortable_fields: List[str] = ["name", "created_at"]
+
+    def _apply_filter(
+        self, items: List[Category], filter_param: str = None
+    ) -> List[Category]:
+        if filter_param:
+            filter_obj = filter(lambda i: filter_param.lower() in i.name.lower(), items)
+            return list(filter_obj)
+
+        return items
+
+    def _apply_sort(
+        self, items: List[Category], sort: str = None, sort_dir: str = None
+    ) -> List[Category]:
+        return (
+            super()._apply_sort(items, sort, sort_dir)
+            if sort
+            else super()._apply_sort(items, "created_at", "desc")
+        )

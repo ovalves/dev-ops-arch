@@ -1,36 +1,7 @@
-# pylint: disable=unexpected-keyword-arg
-
-from dataclasses import dataclass
-from typing import List, Optional
 import unittest
-from src.__shared.domain.entities import Entity
-from src.__shared.domain.types import ENTITY
-from src.__shared.domain.repositories.interface import RepositoryInterface
-from src.__shared.domain.repositories.memory import InMemoryRepository
 from src.__shared.domain.exceptions import NotFoundException
 from src.__shared.domain.value_objects import UniqueEntityId
-
-
-class TestRepositoryInterface(unittest.TestCase):
-    def test_throw_error_when_methods_not_implemented(self):
-        with self.assertRaises(TypeError) as assert_error:
-            RepositoryInterface()
-
-        self.assertEqual(
-            assert_error.exception.args[0],
-            "Can't instantiate abstract class RepositoryInterface with abstract "
-            + "methods delete, find_all, find_by_id, insert, update",
-        )
-
-
-@dataclass(frozen=True, kw_only=True, slots=True)
-class StubEntity(Entity):
-    name: str
-    price: float
-
-
-class StubInMemoryRepository(InMemoryRepository[StubEntity]):
-    pass
+from tests.__shared.stubs import StubEntity, StubInMemoryRepository
 
 
 class TestInMemoryRepository(unittest.TestCase):

@@ -1,6 +1,6 @@
 from typing import Dict
-from src.category.rules.drf_category_rules import DRFCategoryRules
-from src.category.rules.custom_category_rules import CustomCategoryRules
+from src.category.domain.rules.drf_category_rules import DRFCategoryRules
+from src.category.domain.rules.custom_category_rules import CustomCategoryRules
 from src.__shared.domain.validators.drf_validator_adapter import DRFValidatorAdapter
 from src.__shared.domain.validators.custom_validator_adapter import (
     CustomValidatorAdapter,
