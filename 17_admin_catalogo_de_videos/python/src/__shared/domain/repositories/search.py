@@ -1,12 +1,7 @@
-import abc
-from abc import ABC
-from dataclasses import dataclass, field
 import math
-from typing import Any, Generic, List, Optional, TypeVar
-
-from src.__shared.domain.value_objects import UniqueEntityId
-from src.__shared.domain.entities import Entity
-from src.__shared.domain.types import ENTITY, Input, Output, Filter
+from dataclasses import dataclass, field
+from typing import Any, Generic, List, Optional
+from src.__shared.domain.types import ENTITY, Filter
 
 
 @dataclass(slots=True, kw_only=True)

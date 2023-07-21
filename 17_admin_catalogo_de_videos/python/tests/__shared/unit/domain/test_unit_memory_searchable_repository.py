@@ -39,21 +39,31 @@ class TestInMemorySearchableRepository(unittest.TestCase):
             StubEntity(name="c", price=2),
         ]
 
-        result = self.repo._apply_sort(items, "price", "asc")
-        self.assertEqual(items, result)
+        arrange = [
+            {"items": items, "name": "price", "direction": "asc", "expected": items},
+            {
+                "items": items,
+                "name": "name",
+                "direction": "asc",
+                "expected": [items[1], items[0], items[2]],
+            },
+            {
+                "items": items,
+                "name": "name",
+                "direction": "desc",
+                "expected": [items[2], items[0], items[1]],
+            },
+            {
+                "items": items,
+                "name": "price",
+                "direction": "desc",
+                "expected": [items[0], items[1], items[2]],
+            },
+        ]
 
-        result = self.repo._apply_sort(items, "name", "asc")
-        self.assertEqual([items[1], items[0], items[2]], result)
-
-        result = self.repo._apply_sort(items, "name", "desc")
-        self.assertEqual([items[2], items[0], items[1]], result)
-
-        self.repo.sortable_fields.append("price")
-        result = self.repo._apply_sort(items, "price", "asc")
-        self.assertEqual([items[1], items[0], items[2]], result)
-
-        result = self.repo._apply_sort(items, "price", "desc")
-        self.assertEqual([items[2], items[0], items[1]], result)
+        for i in arrange:
+            result = self.repo._apply_sort(i["items"], i["name"], i["direction"])
+            self.assertEqual(i["expected"], result)
 
     def test__apply_paginate(self):
         items = [

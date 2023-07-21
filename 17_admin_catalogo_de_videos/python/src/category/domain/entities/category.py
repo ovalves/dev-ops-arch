@@ -1,6 +1,6 @@
+from typing import Optional
 from datetime import datetime
 from dataclasses import dataclass, field
-from typing import Optional
 from src.category.domain.factory.category_validator_factory import (
     CategoryValidatorFactory,
 )

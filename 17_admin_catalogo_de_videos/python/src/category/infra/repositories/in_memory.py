@@ -1,11 +1,10 @@
 from typing import List
 from src.category.domain.entities.category import Category
 from src.category.domain.repositories import CategoryRepository
-from src.__shared.domain.repositories import InMemorySearchableRepository
-from src.__shared.domain.repositories.memory import InMemoryRepository
+from src.__shared.domain.repositories.memory import InMemorySearchableRepository
 
 
-class CategoryInMemoryRepository(CategoryRepository, InMemoryRepository):
+class CategoryInMemoryRepository(CategoryRepository, InMemorySearchableRepository):
     sortable_fields: List[str] = ["name", "created_at"]
 
     def _apply_filter(
