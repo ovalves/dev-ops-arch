@@ -9,5 +9,5 @@ class TestBaseUsecasesUnit(unittest.TestCase):
 
         self.assertEqual(
             assert_error.exception.args[0],
-            "Can't instantiate abstract class UseCase with abstract method execute"
+            "Can't instantiate abstract class UseCase with abstract method execute",
         )
