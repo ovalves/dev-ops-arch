@@ -2,7 +2,7 @@ from typing import Optional
 from datetime import datetime
 from dataclasses import dataclass
 from src.__shared.domain.types import CategoryOutputType
-from src.category.application.dtos.category_output import CategoryOutput
+from src.category.application.dto.category_output import CategoryOutput
 from src.category.domain.entities.category import Category
 
 

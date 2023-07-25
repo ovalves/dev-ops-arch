@@ -1,9 +1,9 @@
 from typing import Dict, List, Any, TypeVar
 from src.__shared.domain.entities import Entity
-from src.__shared.application.dtos.pagination_output import (
+from src.__shared.application.dto.pagination_output import (
     PaginationOutput as PaginationOutputBound,
 )
-from src.category.application.dtos.category_output import (
+from src.category.application.dto.category_output import (
     CategoryOutput as CategoryOutputBound,
 )
 

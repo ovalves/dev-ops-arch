@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from src.__shared.application.usecases import UseCase
 from src.category.domain.entities.category import Category
 from src.category.domain.repositories import CategoryRepository
-from src.category.application.dtos.category_output import CategoryOutput
+from src.category.application.dto.category_output import CategoryOutput
 from src.category.application.mapper.category_output_mapper import CategoryOutputMapper
 
 
