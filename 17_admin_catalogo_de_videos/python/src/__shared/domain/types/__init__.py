@@ -8,6 +8,7 @@ from src.category.application.dtos.category_output import (
 )
 
 ErrorFields = Dict[str, List[str]]
+ClsPropsValidated = TypeVar("ClsPropsValidated")
 PropsValidated = TypeVar("PropsValidated")
 ENTITY = TypeVar("ENTITY", bound=Entity)
 Item = TypeVar("Item")

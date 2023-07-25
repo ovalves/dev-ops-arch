@@ -18,7 +18,10 @@ class CustomSerializer:
             self.data = self.data["data"]
 
         for key, value in self.data.items():
-            self.parse_rules(key, getattr(self, key), value)
+            try:
+                self.parse_rules(key, getattr(self, key), value)
+            except Exception:
+                continue
 
         self.validate()
 

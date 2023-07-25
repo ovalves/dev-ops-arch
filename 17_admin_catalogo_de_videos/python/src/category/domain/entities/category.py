@@ -9,6 +9,26 @@ from src.__shared.domain.exceptions import EntityValidationException
 from src.__shared.domain.validators.custom_validator_adapter import (
     CustomValidatorAdapter,
 )
+from src.__shared.domain.serializer import CustomSerializer
+from rest_framework import serializers
+from src.__shared.domain.validators.drf_validator_adapter import (
+    DRFStrictBooleanField,
+    DRFStrictCharField,
+)
+
+
+class DRFCategoryRules(serializers.Serializer):
+    name = DRFStrictCharField(max_length=255)
+    description = DRFStrictCharField(required=False, allow_null=True, allow_blank=True)
+    is_active = DRFStrictBooleanField(required=False)
+    created_at = serializers.DateTimeField(required=False)
+
+
+class CustomCategoryRules(CustomSerializer):
+    name = "string|required|max_length:255"
+    description = "max_length:255"
+    is_active = "boolean"
+    created_at = ""
 
 
 @dataclass(kw_only=True, frozen=True, slots=True)
@@ -35,14 +55,8 @@ class Category(Entity):
     def deactivate(self) -> None:
         self._set("is_active", False)
 
-    # @classmethod
-    # def validate(cls, name: str, description: str, is_active: bool = None):
-    #     CustomValidatorAdapter.values(name, "name").required().string().max_length(255)
-    #     CustomValidatorAdapter.values(description, "description").string()
-    #     CustomValidatorAdapter.values(is_active, "is_active").boolean()
-
     def validate(self):
-        validator = CategoryValidatorFactory.create()
+        validator = CategoryValidatorFactory.create(DRFCategoryRules)
         is_valid = validator.validate(self.to_dict())
         if not is_valid:
             raise EntityValidationException(validator.errors)

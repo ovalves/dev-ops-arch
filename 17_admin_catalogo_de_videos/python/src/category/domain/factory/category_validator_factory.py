@@ -1,14 +1,16 @@
+from typing import Any
+from src.__shared.domain.serializer import CustomSerializer
+from src.__shared.domain.validators.interface import ValidatorFieldsInterface
 from src.category.domain.validators.category_validator import (
     DRFCategoryValidator,
     CustomCategoryValidator,
 )
 
 
-class CategoryValidatorFactory:  # pylint: disable=too-few-public-methods
+class CategoryValidatorFactory:
     @staticmethod
-    def create():
-        return DRFCategoryValidator()
+    def create(category_rule_class: Any) -> ValidatorFieldsInterface:
+        if issubclass(category_rule_class, CustomSerializer):
+            return CustomCategoryValidator(rule_class=category_rule_class)
 
-    @staticmethod
-    def custom():
-        return CustomCategoryValidator()
+        return DRFCategoryValidator(rule_class=category_rule_class)

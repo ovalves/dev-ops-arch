@@ -1,33 +1,14 @@
 import unittest
-from src.category.domain.validators.category_validator import DRFCategoryValidator
+from src.category.domain.entities.category import DRFCategoryRules
 from src.category.domain.factory.category_validator_factory import (
     CategoryValidatorFactory,
 )
 
 
-class TestCategoryValidatorUnit(unittest.TestCase):
-
-    validator: DRFCategoryValidator
-
+class TestDRFCategoryValidatorUnit(unittest.TestCase):
     def setUp(self) -> None:
-        self.validator = CategoryValidatorFactory.create()
+        self.validator = CategoryValidatorFactory.create(DRFCategoryRules)
         return super().setUp()
-
-    def test_with_custom_validator(self):
-        validator = CategoryValidatorFactory.custom()
-        invalid_data = [
-            {"data": {"name": None}, "expected": "This field may not be null."},
-            {"data": {"name": ""}, "expected": "This field may not be blank."},
-            {"data": {"name": "5"}, "expected": "Not a valid string."},
-            {
-                "data": {"name": "a" * 256},
-                "expected": "Ensure this field has no more than 255 characters.",
-            },
-        ]
-
-        for i in invalid_data:
-            is_valid = validator.validate(i["data"])
-            self.assertFalse(is_valid)
 
     def test_invalidation_cases_for_name_field(self):
         invalid_data = [

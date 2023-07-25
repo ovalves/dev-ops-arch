@@ -8,7 +8,6 @@ from src.category.domain.entities.category import Category
 
 @dataclass(frozen=True, slots=True)
 class CategoryOutputMapper:
-
     output_child: Optional[CategoryOutputType] = CategoryOutput
 
     @staticmethod

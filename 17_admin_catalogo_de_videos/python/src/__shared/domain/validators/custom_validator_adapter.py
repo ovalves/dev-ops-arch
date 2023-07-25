@@ -1,16 +1,10 @@
 from abc import ABC
-from dataclasses import dataclass
-from typing import Any
-from src.__shared.domain.exceptions import ValidationException
 from src.__shared.domain.types import PropsValidated
 from src.__shared.domain.validators.interface import ValidatorFieldsInterface
 
-# @dataclass(frozen=True)
-# class CustomValidatorAdapter:
-class CustomValidatorAdapter(
-    ValidatorFieldsInterface[PropsValidated], ABC
-):  # pylint: disable=too-few-public-methods
-    """Adaptador de validação do Django Rest Framework
+
+class CustomValidatorAdapter(ValidatorFieldsInterface[PropsValidated], ABC):
+    """Adaptador de validação de regras da entidade Categoria
     Usage:
         ---
 

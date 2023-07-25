@@ -5,9 +5,7 @@ from src.__shared.domain.types import PropsValidated
 from src.__shared.domain.validators.interface import ValidatorFieldsInterface
 
 
-class DRFValidatorAdapter(
-    ValidatorFieldsInterface[PropsValidated], ABC
-):  # pylint: disable=too-few-public-methods
+class DRFValidatorAdapter(ValidatorFieldsInterface[PropsValidated], ABC):
     """Adaptador de validação do Django Rest Framework
     Usage:
         ---
@@ -39,7 +37,7 @@ class DRFStrictCharField(CharField):
 
 
 class DRFStrictBooleanField(BooleanField):
-    def to_internal_value(self, data):  # pylint: disable=inconsistent-return-statements
+    def to_internal_value(self, data):
         if data is True:
             return True
         if data is False:
