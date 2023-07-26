@@ -22,6 +22,9 @@ code_formatter:
 mutation:
 	mutmut run --disable-mutation-types=decorator
 
+pylint:
+	pylint ./src
+
 start:
 	@docker compose -f docker-compose.yaml up -d
 
