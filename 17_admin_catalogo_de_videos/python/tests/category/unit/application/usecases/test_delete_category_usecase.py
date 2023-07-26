@@ -6,8 +6,9 @@ from src.category.domain.entities.category import Category
 from src.category.domain.repositories import CategoryRepository
 from src.category.infra.repositories.in_memory import CategoryInMemoryRepository
 from src.category.application.usecases.delete_category_usecase import (
-    DeleteCategoryUseCase
+    DeleteCategoryUseCase,
 )
+
 
 class TestDeleteCategoryUseCase(unittest.TestCase):
 
@@ -22,23 +23,21 @@ class TestDeleteCategoryUseCase(unittest.TestCase):
         self.assertIsInstance(self.use_case, UseCase)
 
     def test_input(self):
-        self.assertEqual(DeleteCategoryUseCase.Input.__annotations__, {
-            'id': str
-        })
+        self.assertEqual(DeleteCategoryUseCase.Input.__annotations__, {"id": str})
 
     def test_throw_exception_when_category_not_found(self):
-        request = DeleteCategoryUseCase.Input(id='not_found')
+        request = DeleteCategoryUseCase.Input(id="not_found")
         with self.assertRaises(NotFoundException) as assert_error:
             self.use_case.execute(request)
-        self.assertEqual(assert_error.exception.args[0], "Entity not found using ID 'not_found'")
+        self.assertEqual(
+            assert_error.exception.args[0], "Entity not found using ID 'not_found'"
+        )
 
     def test_execute(self):
-        category = Category(name='test')
+        category = Category(name="test")
         self.category_repo.items = [category]
         with patch.object(
-            self.category_repo,
-            'delete',
-            wraps=self.category_repo.delete
+            self.category_repo, "delete", wraps=self.category_repo.delete
         ) as spy_delete:
             request = DeleteCategoryUseCase.Input(id=category.id)
             self.use_case.execute(request)
