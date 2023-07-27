@@ -1,5 +1,5 @@
 import unittest
-from src.__shared.domain.repositories.interface import (
+from src.core.__shared.domain.repositories.interface import (
     RepositoryInterface,
     SearchableRepositoryInterface,
 )

@@ -1,5 +1,5 @@
 import unittest
-from src.__shared.application.usecases import UseCase
+from src.core.__shared.application.usecases import UseCase
 
 
 class TestBaseUsecasesUnit(unittest.TestCase):

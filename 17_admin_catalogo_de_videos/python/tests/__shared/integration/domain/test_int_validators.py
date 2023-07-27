@@ -1,6 +1,8 @@
 import unittest
 from rest_framework import serializers
-from src.__shared.domain.validators.drf_validator_adapter import DRFValidatorAdapter
+from src.core.__shared.domain.validators.drf_validator_adapter import (
+    DRFValidatorAdapter,
+)
 
 
 # pylint: disable=abstract-method

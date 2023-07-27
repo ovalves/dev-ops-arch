@@ -1,7 +1,7 @@
 import unittest
 from typing import Optional
-from src.__shared.domain.types import Filter
-from src.__shared.domain.repositories.search import SearchParams
+from src.core.__shared.domain.types import Filter
+from src.core.__shared.domain.repositories.search import SearchParams
 
 
 class TestSearchParamsFilter(unittest.TestCase):

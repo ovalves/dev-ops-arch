@@ -1,7 +1,7 @@
 import unittest
 from typing import Optional
 from datetime import datetime
-from src.category.application.dto.category_output import CategoryOutput
+from src.core.category.application.dto.category_output import CategoryOutput
 
 
 class TestCategoryOutputDtoUnit(unittest.TestCase):

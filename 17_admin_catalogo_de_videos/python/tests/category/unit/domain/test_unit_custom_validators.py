@@ -1,6 +1,6 @@
 import unittest
-from src.category.domain.entities.category import CustomCategoryRules, Category
-from src.category.domain.factory.category_validator_factory import (
+from src.core.category.domain.entities.category import CustomCategoryRules, Category
+from src.core.category.domain.factory.category_validator_factory import (
     CategoryValidatorFactory,
 )
 

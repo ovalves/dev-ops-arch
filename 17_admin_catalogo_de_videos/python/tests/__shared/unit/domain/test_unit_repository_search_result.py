@@ -1,11 +1,11 @@
 import unittest
 from typing import List, Optional
-from src.__shared.domain.entities import Entity
-from src.__shared.domain.types import ENTITY, Filter
-from src.__shared.domain.repositories.search import SearchResult
-from src.__shared.domain.repositories.memory import InMemoryRepository
-from src.__shared.domain.exceptions import NotFoundException
-from src.__shared.domain.value_objects import UniqueEntityId
+from src.core.__shared.domain.entities import Entity
+from src.core.__shared.domain.types import ENTITY, Filter
+from src.core.__shared.domain.repositories.search import SearchResult
+from src.core.__shared.domain.repositories.memory import InMemoryRepository
+from src.core.__shared.domain.exceptions import NotFoundException
+from src.core.__shared.domain.value_objects import UniqueEntityId
 from tests.__shared.stubs import StubEntity
 
 

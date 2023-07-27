@@ -3,7 +3,7 @@ from tests.__shared.stubs import (
     StubEntity,
     StubInMemorySearchableRepository,
 )
-from src.__shared.domain.repositories.search import SearchResult, SearchParams
+from src.core.__shared.domain.repositories.search import SearchResult, SearchParams
 
 
 class TestInMemorySearchableRepository(unittest.TestCase):

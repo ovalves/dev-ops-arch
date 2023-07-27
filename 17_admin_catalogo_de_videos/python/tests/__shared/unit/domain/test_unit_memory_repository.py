@@ -1,6 +1,6 @@
 import unittest
-from src.__shared.domain.exceptions import NotFoundException
-from src.__shared.domain.value_objects import UniqueEntityId
+from src.core.__shared.domain.exceptions import NotFoundException
+from src.core.__shared.domain.value_objects import UniqueEntityId
 from tests.__shared.stubs import StubEntity, StubInMemoryRepository
 
 

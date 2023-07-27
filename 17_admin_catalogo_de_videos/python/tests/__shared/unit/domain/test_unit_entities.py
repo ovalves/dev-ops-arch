@@ -3,8 +3,8 @@
 import unittest
 from abc import ABC
 from dataclasses import dataclass, is_dataclass
-from src.__shared.domain.entities import Entity
-from src.__shared.domain.value_objects import UniqueEntityId
+from src.core.__shared.domain.entities import Entity
+from src.core.__shared.domain.value_objects import UniqueEntityId
 
 
 @dataclass(frozen=True)

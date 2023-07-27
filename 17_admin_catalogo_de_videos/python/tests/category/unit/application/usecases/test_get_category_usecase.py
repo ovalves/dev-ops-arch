@@ -1,12 +1,12 @@
 import unittest
 from unittest.mock import patch
 
-from src.__shared.domain.exceptions import NotFoundException
-from src.__shared.application.usecases import UseCase
-from src.category.application.dto.category_output import CategoryOutput
-from src.category.domain.entities.category import Category
-from src.category.infra.repositories.in_memory import CategoryInMemoryRepository
-from src.category.application.usecases.get_category_usecase import (
+from src.core.__shared.domain.exceptions import NotFoundException
+from src.core.__shared.application.usecases import UseCase
+from src.core.category.application.dto.category_output import CategoryOutput
+from src.core.category.domain.entities.category import Category
+from src.core.category.infra.repositories.in_memory import CategoryInMemoryRepository
+from src.core.category.application.usecases.get_category_usecase import (
     GetCategoryUseCase,
 )
 

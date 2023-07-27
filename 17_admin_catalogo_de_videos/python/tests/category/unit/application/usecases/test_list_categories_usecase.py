@@ -3,19 +3,21 @@ import unittest
 from datetime import timedelta, timezone, datetime
 from unittest.mock import patch
 
-from src.category.domain.repositories import CategoryRepository
-from src.__shared.domain.exceptions import NotFoundException
-from src.__shared.application.usecases import UseCase
-from src.__shared.application.dto.search_input import SearchInput
-from src.__shared.application.dto.pagination_output import PaginationOutput
-from src.__shared.application.mapper.pagination_output_mapper import (
+from src.core.category.domain.repositories import CategoryRepository
+from src.core.__shared.domain.exceptions import NotFoundException
+from src.core.__shared.application.usecases import UseCase
+from src.core.__shared.application.dto.search_input import SearchInput
+from src.core.__shared.application.dto.pagination_output import PaginationOutput
+from src.core.__shared.application.mapper.pagination_output_mapper import (
     PaginationOutputMapper,
 )
-from src.category.application.dto.category_output import CategoryOutput
-from src.category.application.mapper.category_output_mapper import CategoryOutputMapper
-from src.category.domain.entities.category import Category
-from src.category.infra.repositories.in_memory import CategoryInMemoryRepository
-from src.category.application.usecases.list_categories_usecase import (
+from src.core.category.application.dto.category_output import CategoryOutput
+from src.core.category.application.mapper.category_output_mapper import (
+    CategoryOutputMapper,
+)
+from src.core.category.domain.entities.category import Category
+from src.core.category.infra.repositories.in_memory import CategoryInMemoryRepository
+from src.core.category.application.usecases.list_categories_usecase import (
     ListCategoriesUseCase,
 )
 

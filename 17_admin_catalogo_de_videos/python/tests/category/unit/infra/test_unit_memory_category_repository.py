@@ -1,7 +1,7 @@
 import unittest
 from datetime import timedelta, datetime
-from src.category.domain.entities.category import Category
-from src.category.infra.repositories.in_memory import CategoryInMemoryRepository
+from src.core.category.domain.entities.category import Category
+from src.core.category.infra.repositories.in_memory import CategoryInMemoryRepository
 
 
 class TestCategoryInMemoryRepositoryUnit(unittest.TestCase):

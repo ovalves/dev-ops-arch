@@ -2,14 +2,14 @@ import unittest
 from dataclasses import fields
 from unittest.mock import MagicMock, PropertyMock, patch
 from rest_framework import serializers
-from src.__shared.domain.exceptions import ValidationException
-from src.__shared.domain.validators.drf_validator_adapter import (
+from src.core.__shared.domain.exceptions import ValidationException
+from src.core.__shared.domain.validators.drf_validator_adapter import (
     DRFValidatorAdapter,
     DRFStrictBooleanField,
     DRFStrictCharField,
     ValidatorFieldsInterface,
 )
-from src.__shared.domain.validators.custom_validator_adapter import (
+from src.core.__shared.domain.validators.custom_validator_adapter import (
     CustomValidatorAdapter,
 )
 

@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from typing import List
-from src.__shared.domain.repositories.memory import (
+from src.core.__shared.domain.repositories.memory import (
     InMemoryRepository,
     InMemorySearchableRepository,
 )
-from src.__shared.domain.entities import Entity
+from src.core.__shared.domain.entities import Entity
 
 
 @dataclass(frozen=True, kw_only=True, slots=True)

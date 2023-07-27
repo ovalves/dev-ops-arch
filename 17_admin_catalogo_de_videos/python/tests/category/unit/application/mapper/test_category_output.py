@@ -1,8 +1,10 @@
 import unittest
 from datetime import datetime
-from src.category.domain.entities.category import Category
-from src.category.application.dto.category_output import CategoryOutput
-from src.category.application.mapper.category_output_mapper import CategoryOutputMapper
+from src.core.category.domain.entities.category import Category
+from src.core.category.application.dto.category_output import CategoryOutput
+from src.core.category.application.mapper.category_output_mapper import (
+    CategoryOutputMapper,
+)
 
 
 class CategoryOutputChild(CategoryOutput):
