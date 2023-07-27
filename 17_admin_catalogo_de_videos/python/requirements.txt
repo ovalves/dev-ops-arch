@@ -1,4 +1,13 @@
 pymongo==4.1.1
 requests==2.27.1
 redis==4.3.4
+django==4.2.3
 djangorestframework==3.14.0
+django-extensions==3.2.3
+dependency-injector==4.41.0
+pydantic==2.1.1
+dj-database-url==2.0.0
+python-dotenv==1.0.0
+pymysql==1.0.2
+colorama==0.4.6
+
