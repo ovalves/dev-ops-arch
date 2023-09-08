@@ -1,4 +1,5 @@
 # Event Driven Architecture
+
 É um design pattern arquitetural onde comunicação entre os sistemas acontece através de eventos eventos. Esses eventos geralmente são feitos para notificar a mudança de estados dos dados.
 
 Esse tipo de arquitetura gera um baixo acoplamento entre os sistemas.

@@ -1,0 +1,6 @@
+*
+!pkg
+!internal
+!cmd
+!api
+!go.mod
