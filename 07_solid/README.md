@@ -1,6 +1,6 @@
 # SOLID
 Os princípios do SOLID são um guia de como criar um código que seja fácil de escalar e manter.
-Eles cinco princípios foram popularizados por Robert C. Martin.
+Estes cinco princípios foram popularizados por Robert C. Martin.
 
 ## S - Single Responsibility
 ### Uma Classe deve ter uma única responsabilidade.
@@ -20,7 +20,7 @@ Alterar o comportamento atual de uma classe afetará todos os sistemas usando es
 
 Se você deseja que a classe execute mais funções, a abordagem ideal é adicionar funções ao invés de alterá-las.
 
-Esse princípio visa estender o comportamento de uma classe sem alterar o comportamento existente dessa classe. Isso deve evitar causar bugs onde quer que a classe esteja sendo usada.
+Esse princípio visa estender o comportamento de uma classe sem alterar o comportamento existente dessa classe. Isso evita causar bugs onde quer que a classe esteja sendo usada.
 
 ![](../_assets/ocp.png "Open-Closed")
 
@@ -35,7 +35,7 @@ Se você tem uma classe e cria outra classe, ela se torna pai e a nova classe se
 
 A classe filha deve ser capaz de processar as mesmas requisições e fornecer os mesmos resultados que a classe pai ou pode fornecer um resultado do mesmo tipo.
 
-A imagem mostra que a classe pai entrega café (pode ser qualquer tipo de café). É aceitável para a classe filha entregar cappucino porque é um tipo específico de café, mas não é aceitável entregar água.
+A imagem mostra que a classe pai entrega café (pode ser qualquer tipo de café). É aceitável para a classe filha entregar cappuccino porque é um tipo específico de café, mas não é aceitável entregar água.
 
 Esse princípio visa impor consistência para que a classe pai ou sua classe filha possam ser trocadas e usadas da mesma maneira sem causar erros.
 
@@ -58,7 +58,6 @@ Esse princípio visa dividir um conjunto de ações em conjuntos menores, para q
 
 ## D - Dependency Inversion
 - Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.
-
 - As abstrações não devem depender de classes concretas. As classes concretas devem depender de abstrações.
 
 ### Definições
@@ -70,20 +69,5 @@ Esse princípio visa dividir um conjunto de ações em conjuntos menores, para q
 Esse princípio visa reduzir a dependência de uma classe de alto nível na classe de baixo nível, introduzindo uma interface.
 
 ![](../_assets/dip.png "Dependency Inversion")
-
----
-
-## Coesão
-TODO
-
----
-
-## Encapsulamento
-TODO
-
----
-
-## Acoplamento
-TODO
 
 ---

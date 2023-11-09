@@ -1,7 +1,11 @@
 <?php
+
 // Dependency Inversion Principle Violation
 class Mailer
 {
+    public function send()
+    {
+    }
 }
 
 class SendWelcomeMessage
